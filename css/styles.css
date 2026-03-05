@@ -1,0 +1,864 @@
+/* =========================
+   Brand tokens (afgeleid van jouw brand look/screenshot)
+   ========================= */
+:root {
+    --brand-primary: #2BB39B;
+    --brand-primary-dark: #009883;
+
+    --bg: #ffffff;
+    --bg-soft: #FAF5EE;
+
+    --text: #111827;
+    --muted: #4B5563;
+
+    --border: #E7E2D8;
+
+    /* iets breder en meer lucht zoals je target */
+    --container: 1180px;
+
+    --radius-lg: 10px;
+    /* topbar radius */
+    --radius-btn: 6px;
+    /* button radius */
+
+    /* button look uit je brand example (subtiele “lip” schaduw) */
+    --btn-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 96px));
+    margin-inline: auto;
+}
+
+/* =========================
+   NAV / TOPBAR (aangepast naar target)
+   ========================= */
+.topbar {
+    padding: 12px 0 0;
+    /* iets minder ruimte boven de bar */
+}
+
+.topbar__inner {
+    background: var(--bg-soft);
+    border-radius: var(--radius-lg);
+
+    padding: 10px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* alleen onderaan een lijn */
+    box-shadow: inset 0 -1px 0 #E3D7C6;
+}
+
+/* logo iets groter zoals in target */
+.brand__logo {
+    height: 26px;
+    width: auto;
+    display: block;
+}
+
+.topnav {
+    display: flex;
+    align-items: center;
+    /* links + button op één baseline */
+    gap: 26px;
+    /* iets meer spacing tussen links */
+}
+
+.topnav__link {
+    font-size: 13px;
+    font-weight: 500;
+    /* target oogt iets lichter */
+    color: rgba(17, 24, 39, .88);
+    padding: 6px 0;
+    /* helpt verticaal alignen */
+}
+
+.topnav__link:hover {
+    color: rgba(17, 24, 39, 1);
+}
+
+/* =========================
+   Buttons (match design)
+   ========================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 18px;
+    border-radius: var(--radius-btn);
+    border: 2px solid transparent;
+
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 1;
+    white-space: nowrap;
+
+    /* dit creëert de "lip" onder de knop */
+    box-shadow: 0 2px 0 #1E7A6A;
+    transform: translateY(0);
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* klik effect */
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+}
+
+.btn--sm {
+    padding: 9px 12px;
+    font-size: 12px;
+}
+
+/* groene button */
+.btn--primary {
+    background: var(--brand-primary);
+    border: 2px solid var(--brand-primary);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--brand-primary-dark);
+    border-color: var(--brand-primary-dark);
+}
+
+/* outline button */
+.btn--outline {
+    background: #fff;
+    border: 2px solid var(--brand-primary);
+    color: var(--brand-primary);
+
+    /* outline buttons hebben ook een shadow in je design */
+    box-shadow: 0 2px 0 #1E7A6A;
+}
+
+.btn--outline:hover {
+    background: rgba(58, 138, 122, 0.07);
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero {
+    padding: 72px 0 52px;
+    /* meer lucht zoals target */
+}
+
+.hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 44px;
+}
+
+.hero__title {
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+    font-weight: 800;
+}
+
+.hero__lead {
+    margin: 0 0 18px;
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.hero__cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.hero__note {
+    margin: 0;
+    font-size: 11px;
+    color: rgba(17, 24, 39, 0.55);
+}
+
+.hero__visual img {
+    width: 100%;
+    height: auto;
+}
+
+/* ===== Portal strip (match target: hoger + card meer rechts) ===== */
+.portal-strip {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 54px 0;
+}
+
+.portal-strip__inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: center;
+}
+
+.portal-strip__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.portal-strip__path {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+}
+
+.portal-strip__card {
+    justify-self: end;
+    /* card naar rechts zoals target */
+    width: min(420px, 100%);
+
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 16px;
+    box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06);
+}
+
+.portal-strip__card h3 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.portal-strip__card p {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 0 10px;
+}
+
+/* ===== Practice section (match target: grote blob background + meer spacing) ===== */
+.practice {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0 96px;
+    /* meer lucht */
+}
+
+/* BELANGRIJK:
+   Voeg in je HTML binnen .practice (net na <section class="practice">) toe:
+   <img class="practice__blob" src="assets/img/blob-blue.png" alt="" />
+*/
+.practice__blob {
+    position: absolute;
+    left: -260px;
+    top: -90px;
+    width: 1050px;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.practice .container {
+    position: relative;
+    z-index: 1;
+}
+
+.practice__title {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 0 22px;
+    color: rgba(17, 24, 39, 0.9);
+}
+
+.practice__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+    align-items: center;
+}
+
+.practice__row--top {
+    margin-bottom: 54px;
+}
+
+.practice__visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.practice__copy h3 {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--brand-primary);
+    margin-bottom: 8px;
+}
+
+.practice__copy p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+.practice__list {
+    margin: 0;
+    padding-left: 16px;
+    color: rgba(17, 24, 39, 0.82);
+    font-size: 12px;
+}
+
+.practice__list li {
+    margin: 6px 0;
+}
+
+/* Bottom row specifics (tablet rechts onder + decor groter) */
+.practice__row--bottom {
+    margin-top: 56px;
+    align-items: end;
+}
+
+.practice__copy--small h3 {
+    color: var(--brand-primary);
+}
+
+.practice__visual--tablet {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 360px;
+}
+
+.practice__decor {
+    position: absolute;
+    right: -40px;
+    bottom: 0;
+    width: 520px;
+    height: auto;
+    opacity: 0.9;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.practice__tablet {
+    position: relative;
+    width: min(620px, 100%);
+    z-index: 1;
+}
+
+/* Stats row (binnen practice) */
+.practice__row--stats {
+    margin-top: 72px;
+    align-items: start;
+}
+
+/* Visual container */
+.practice__visual--stats {
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* stats dashboard: kleiner en begrensd */
+.stats__dashboard {
+    width: min(520px, 100%);
+    max-width: 520px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* monkey/app: kleiner en subtiel overlappend */
+.stats__app {
+    position: absolute;
+    left: -18px;
+    bottom: -18px;
+    width: 150px;
+    height: auto;
+    z-index: 1;
+}
+
+/* =========================
+   Benefits
+   ========================= */
+.benefits {
+    padding: 70px 0 40px;
+}
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.benefits__intro {
+    grid-column: 1 / 2;
+}
+
+.benefits__title {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0;
+    color: rgba(17, 24, 39, .9);
+}
+
+.benefit-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 14px;
+}
+
+.benefit-card h3 {
+    margin: 8px 0 6px;
+    font-size: 13px;
+    font-weight: 900;
+    color: rgba(17, 24, 39, .92);
+}
+
+.benefit-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.benefit-card__icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+}
+
+.benefit-card__icon--pink {
+    background: #F3B8B8;
+}
+
+.benefit-card__icon--orange {
+    background: #F6C18C;
+}
+
+.benefit-card__icon--yellow {
+    background: #F7D37B;
+}
+
+.benefit-card__icon--green {
+    background: #BFE7D5;
+}
+
+/* =========================
+   FAQ section
+   ========================= */
+.faq {
+    padding: 22px 0 50px;
+}
+
+.faq__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.faq__title {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: rgba(17, 24, 39, .9);
+}
+
+.faq__list {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+}
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    font-weight: 900;
+    color: rgba(17, 24, 39, .7);
+}
+
+.faq-item[open] summary::after {
+    content: "–";
+}
+
+.faq-item__content {
+    padding: 0 14px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* side card */
+.faq-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06);
+}
+
+.faq-card__badge {
+    width: 22px;
+    height: 22px;
+    background: #F3C55A;
+    /* geel blokje */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.faq-card h3 {
+    font-size: 13px;
+    font-weight: 900;
+    margin: 0 0 8px;
+}
+
+.faq-card p {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================
+   Pricing
+   ========================= */
+.pricing {
+    padding: 28px 0 54px;
+    background: #fff;
+}
+
+.pricing__title {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 0 16px;
+    color: rgba(17, 24, 39, .9);
+}
+
+.pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.price-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.price-card--featured {
+    border: 2px solid var(--brand-primary);
+}
+
+.price-card__tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(17, 24, 39, .75);
+    margin-bottom: 8px;
+}
+
+.price-card h3 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.price-card p {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.price__amount {
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.price__period {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.price__list {
+    margin: 0 0 14px;
+    padding-left: 16px;
+    font-size: 12px;
+    color: rgba(17, 24, 39, .82);
+}
+
+.price__list li {
+    margin: 6px 0;
+}
+
+/* =========================
+   Testimonials
+   ========================= */
+.testimonials {
+    padding: 44px 0 44px;
+    background: #fff;
+}
+
+.testimonials__title {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 0 16px;
+    color: rgba(17, 24, 39, .9);
+}
+
+.testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.t-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.t-card__stars {
+    letter-spacing: 0.08em;
+    font-weight: 900;
+    font-size: 12px;
+    color: #F4B43C;
+    margin-bottom: 8px;
+}
+
+.t-card p {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.t-card__meta {
+    font-size: 11px;
+}
+
+/* =========================
+   Final CTA
+   ========================= */
+.final-cta {
+    background: var(--bg-soft);
+    padding: 38px 0 50px;
+}
+
+.final-cta__inner {
+    padding: 18px 0;
+}
+
+.final-cta h2 {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 0 6px;
+}
+
+.final-cta p {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.footer {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 32px 0 50px;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.footer__logo {
+    height: 28px;
+    width: auto;
+}
+
+.footer__col h4 {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(17, 24, 39, .65);
+}
+
+.footer__col a {
+    display: block;
+    padding: 6px 0;
+    font-size: 12px;
+    color: rgba(17, 24, 39, .85);
+}
+
+/* =========================
+   Responsive additions
+   ========================= */
+@media (max-width: 900px) {
+    .benefits__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 900px) {
+    .container {
+        width: min(var(--container), calc(100% - 48px));
+    }
+
+    .topnav {
+        gap: 14px;
+    }
+
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .hero {
+        padding: 28px 0 40px;
+    }
+
+    .portal-strip {
+        padding: 28px 0;
+    }
+
+    .portal-strip__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .portal-strip__path {
+        max-width: 520px;
+    }
+
+    .portal-strip__card {
+        justify-self: start;
+        width: min(520px, 100%);
+    }
+
+    .practice__row {
+        grid-template-columns: 1fr;
+    }
+
+    .practice__blob {
+        width: 900px;
+        left: -420px;
+        top: -140px;
+        opacity: 0.85;
+    }
+
+    .practice__visual--tablet {
+        justify-content: center;
+        min-height: auto;
+    }
+
+    .practice__decor {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -12px;
+        width: 460px;
+    }
+
+    .stats__app {
+        left: 0;
+        bottom: -18px;
+        width: 140px;
+    }
+}
