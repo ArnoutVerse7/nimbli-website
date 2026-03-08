@@ -318,28 +318,43 @@
         <section class="testimonials">
             <div class="container">
                 <h2 class="testimonials__title">Vertrouwd door kinesisten en gezinnen</h2>
-                <p>Echte ervaringen uit de praktijk.</p>
+                <p class="testimonials__subtitle">Echte ervaringen uit de praktijk.</p>
 
                 <div class="testimonials__grid">
                     <article class="t-card">
                         <div class="t-card__stars">★★★★★</div>
-                        <p>“Emma vond oefenen eerst vervelend, maar sinds we Nimbli gebruiken vraagt ze er zelf naar.
-                            De vooruitgang is echt zichtbaar en ze is veel zelfverzekerder geworden.”</p>
-                        <div class="t-card__meta muted">Sophie Janssens <br> Moeder van Emma, 7 jaar</div>
+                        <p class="t-card__text">
+                            Emma vond oefenen eerst vervelend, maar sinds we Nimbli gebruiken vraagt ze er zelf naar.
+                            De vooruitgang is echt zichtbaar en ze is veel zelfverzekerder geworden.
+                        </p>
+                        <div class="t-card__meta">
+                            <strong>Sophie Janssens</strong>
+                            <span>Moeder van Emma, 7 jaar</span>
+                        </div>
                     </article>
 
                     <article class="t-card">
                         <div class="t-card__stars">★★★★★</div>
-                        <p>“Nimbli heeft mijn praktijk getransformeerd. Ik kan effectiever werken, de therapietrouw is
-                            enorm gestegen en ik zie betere resultaten bij mijn patiëntjes.”</p>
-                        <div class="t-card__meta muted">Thomas De Vries <br>Kinderkinesist</div>
+                        <p class="t-card__text">
+                            Nimbli heeft mijn praktijk getransformeerd. Ik kan effectiever werken, de therapietrouw is
+                            enorm gestegen en ik zie betere resultaten bij mijn patiëntjes.
+                        </p>
+                        <div class="t-card__meta">
+                            <strong>Thomas De Vries</strong>
+                            <span>Kinderkinesist</span>
+                        </div>
                     </article>
 
                     <article class="t-card">
                         <div class="t-card__stars">★★★★★</div>
-                        <p>“Als ouder geeft Nimbli rust. We hebben een duidelijke structuur, Noah blijft gemotiveerd en
-                            ik kan eenvoudig communiceren met de kinesist over zijn voortgang.”</p>
-                        <div class="t-card__meta muted">Lisa Vermeulen<br>Mama van Noah, 9 jaar</div>
+                        <p class="t-card__text">
+                            Als ouder geeft Nimbli rust. We hebben een duidelijke structuur, Noah blijft gemotiveerd en
+                            ik kan eenvoudig communiceren met de kinesist over zijn voortgang.
+                        </p>
+                        <div class="t-card__meta">
+                            <strong>Lisa Vermeulen</strong>
+                            <span>Mama van Noah, 9 jaar</span>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -348,12 +363,15 @@
         <!-- FINAL CTA -->
         <section class="final-cta">
             <div class="container final-cta__inner">
-                <h2>Klaar om te starten?</h2>
-                <p class="muted">Start vandaag met een gratis proefperiode en ervaar hoe Nimbli je opvolging
-                    automatiseert.</p>
-                <a class="btn btn--primary btn--sm" href="#registreren">Registreren</a>
+                <div class="final-cta__content">
+                    <h2>Klaar om te starten?</h2>
+                    <p class="muted">
+                        Start vandaag met een gratis proefperiode en ervaar hoe Nimbli je opvolging automatiseert.
+                    </p>
+                    <a class="btn btn--primary btn--sm" href="#registreren">Registreren</a>
+                </div>
+                <img src="assets/images/monkey3.png" alt="" class="final-cta__decor">
             </div>
-            <img src="assets/images/monkeyHead.png" alt="Nimbli monkey head">
         </section>
     </main>
 
@@ -363,6 +381,17 @@
 
             <div class="footer__brand">
                 <img src="assets/images/Logo.png" alt="nimbli" class="footer__logo" />
+
+                <div class="footer__socials">
+                    <a href="#" aria-label="LinkedIn">
+                        <img src="assets/images/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="assets/images/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+
+                <p class="footer__copyright">© 2026 Nimbli.</p>
             </div>
 
             <div class="footer__col">
@@ -371,10 +400,27 @@
                 <a href="#registreren">Registreren</a>
             </div>
 
-            <div class="footer__col">
+            <div class="footer__col footer__contact">
                 <p>Contacteer ons</p>
-                <a href="#">+32 3458 456 712</a>
-                <a href="#">Support@nimbli.be</a>
+
+                <a href="tel:03458456712">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span>03 458 456 712</span>
+                </a>
+
+                <a href="mailto:Support@nimbli.be">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                        <path
+                            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                    </svg>
+                    <span>Support@nimbli.be</span>
+                </a>
             </div>
 
         </div>
