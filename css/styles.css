@@ -1,5 +1,5 @@
 /* =========================
-   Brand tokens (afgeleid van jouw brand look/screenshot)
+   Brand tokens
    ========================= */
 :root {
     --brand-primary: #2BB39B;
@@ -10,19 +10,12 @@
 
     --text: #111827;
     --muted: #4B5563;
-
     --border: #E7E2D8;
 
-    /* iets breder en meer lucht zoals je target */
-    --container: 1180px;
+    --container: 1440px;
 
     --radius-lg: 10px;
-    /* topbar radius */
     --radius-btn: 6px;
-    /* button radius */
-
-    /* button look uit je brand example (subtiele “lip” schaduw) */
-    --btn-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
 }
 
 /* Base */
@@ -57,29 +50,27 @@ a {
     margin-inline: auto;
 }
 
+.muted {
+    color: var(--muted);
+}
+
 /* =========================
-   NAV / TOPBAR (aangepast naar target)
+   NAV / TOPBAR
    ========================= */
 .topbar {
     padding: 12px 0 0;
-    /* iets minder ruimte boven de bar */
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: var(--radius-lg);
-
-    padding: 10px 18px;
-
+    padding: 20px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    /* alleen onderaan een lijn */
     box-shadow: inset 0 -1px 0 #E3D7C6;
 }
 
-/* logo iets groter zoals in target */
 .brand__logo {
     height: 26px;
     width: auto;
@@ -89,18 +80,14 @@ a {
 .topnav {
     display: flex;
     align-items: center;
-    /* links + button op één baseline */
     gap: 26px;
-    /* iets meer spacing tussen links */
 }
 
 .topnav__link {
     font-size: 13px;
     font-weight: 500;
-    /* target oogt iets lichter */
-    color: rgba(17, 24, 39, .88);
+    color: rgba(17, 24, 39, 0.88);
     padding: 6px 0;
-    /* helpt verticaal alignen */
 }
 
 .topnav__link:hover {
@@ -108,36 +95,30 @@ a {
 }
 
 /* =========================
-   Buttons (match design)
+   Buttons
    ========================= */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     padding: 12px 18px;
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
-
     font-weight: 800;
     font-size: 13px;
     line-height: 1;
     white-space: nowrap;
-
-    /* dit creëert de "lip" onder de knop */
     box-shadow: 0 2px 0 #1E7A6A;
     transform: translateY(0);
     transition: transform 0.05s ease, box-shadow 0.05s ease;
-
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* klik effect */
 .btn:active {
     transform: translateY(2px);
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+    box-shadow: 0 1px 0 #1E7A6A;
 }
 
 .btn--sm {
@@ -145,7 +126,6 @@ a {
     font-size: 12px;
 }
 
-/* groene button */
 .btn--primary {
     background: var(--brand-primary);
     border: 2px solid var(--brand-primary);
@@ -157,13 +137,10 @@ a {
     border-color: var(--brand-primary-dark);
 }
 
-/* outline button */
 .btn--outline {
     background: #fff;
     border: 2px solid var(--brand-primary);
     color: var(--brand-primary);
-
-    /* outline buttons hebben ook een shadow in je design */
     box-shadow: 0 2px 0 #1E7A6A;
 }
 
@@ -175,8 +152,7 @@ a {
    HERO
    ========================= */
 .hero {
-    padding: 72px 0 52px;
-    /* meer lucht zoals target */
+    padding: 100px 52px;
 }
 
 .hero__inner {
@@ -217,16 +193,18 @@ a {
 }
 
 .hero__visual img {
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
-/* ===== Portal strip (match target: hoger + card meer rechts) ===== */
+/* =========================
+   Portal strip
+   ========================= */
 .portal-strip {
     background: var(--bg-soft);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 54px 0;
+    padding: 0px 52px;
 }
 
 .portal-strip__inner {
@@ -245,291 +223,264 @@ a {
 .portal-strip__path {
     width: 100%;
     max-width: 560px;
-    height: auto;
 }
 
 .portal-strip__card {
     justify-self: end;
-    /* card naar rechts zoals target */
     width: min(420px, 100%);
-
-    background: #fff;
-    border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 16px 16px;
-    box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06);
+    padding: 16px;
 }
 
 .portal-strip__card h3 {
-    font-size: 14px;
-    font-weight: 800;
-    margin-bottom: 6px;
+    font-size: 32px;
+    margin: 0 0 6px;
 }
 
 .portal-strip__card p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.55;
     color: var(--muted);
     margin: 0 0 10px;
 }
 
-/* ===== Practice section (match target: grote blob background + meer spacing) ===== */
+.portal-strip__card .btn {
+    padding: 10px 32px;
+    font-size: 14px;
+}
+
+/* =========================
+   Practice
+   ========================= */
 .practice {
-    position: relative;
-    overflow: hidden;
-    padding: 72px 0 96px;
-    /* meer lucht */
-}
-
-/* BELANGRIJK:
-   Voeg in je HTML binnen .practice (net na <section class="practice">) toe:
-   <img class="practice__blob" src="assets/img/blob-blue.png" alt="" />
-*/
-.practice__blob {
-    position: absolute;
-    left: -260px;
-    top: -90px;
-    width: 1050px;
-    height: auto;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.practice .container {
-    position: relative;
-    z-index: 1;
+    padding: 52px 52px;
 }
 
 .practice__title {
-    font-size: 14px;
-    font-weight: 800;
-    margin: 0 0 22px;
-    color: rgba(17, 24, 39, 0.9);
+    font-size: 32px;
+    margin: 0 0 28px;
 }
 
 .practice__row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 34px;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 200px;
     align-items: center;
 }
 
+/* rij 1 */
 .practice__row--top {
-    margin-bottom: 54px;
+    margin-top: 80px;
+}
+
+/* rij 2 */
+.practice__row--bottom {
+    margin-bottom: 56px;
+    align-items: center;
+}
+
+/* rij 3 */
+.practice__row--stats {
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
 }
 
 .practice__visual img {
     width: 100%;
     height: auto;
-    display: block;
+}
+
+.practice__copy {
+    max-width: 360px;
 }
 
 .practice__copy h3 {
-    font-size: 16px;
-    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
     color: var(--brand-primary);
-    margin-bottom: 8px;
+    margin: 0 0 8px;
 }
 
 .practice__copy p {
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.55;
     margin: 0 0 10px;
 }
 
 .practice__list {
     margin: 0;
-    padding-left: 16px;
+    padding-left: 14px;
     color: rgba(17, 24, 39, 0.82);
-    font-size: 12px;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .practice__list li {
-    margin: 6px 0;
+    margin: 5px 0;
 }
 
-/* Bottom row specifics (tablet rechts onder + decor groter) */
-.practice__row--bottom {
-    margin-top: 56px;
-    align-items: end;
+.practice__list--checks {
+    list-style: disc;
 }
 
-.practice__copy--small h3 {
-    color: var(--brand-primary);
+/* desktop */
+.practice__visual--desktop {
+    max-width: 720px;
 }
 
+.practice__row--top .practice__copy {
+    justify-self: start;
+    margin-top: 8px;
+}
+
+/* tablet */
 .practice__visual--tablet {
-    position: relative;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
-    min-height: 360px;
-}
-
-.practice__decor {
-    position: absolute;
-    right: -40px;
-    bottom: 0;
-    width: 520px;
-    height: auto;
-    opacity: 0.9;
-    z-index: 0;
-    pointer-events: none;
+    align-items: center;
+    min-height: 280px;
 }
 
 .practice__tablet {
-    position: relative;
-    width: min(620px, 100%);
-    z-index: 1;
+    min-width: 750px;
+    margin-right: -100px;
 }
 
-/* Stats row (binnen practice) */
-.practice__row--stats {
-    margin-top: 72px;
-    align-items: start;
-}
-
-/* Visual container */
 .practice__visual--stats {
-    position: relative;
-    min-height: 260px;
+    width: 100%;
     display: flex;
-    align-items: flex-start;
-}
-
-/* stats dashboard: kleiner en begrensd */
-.stats__dashboard {
-    width: min(520px, 100%);
-    max-width: 520px;
-    height: auto;
-    display: block;
-    position: relative;
-    z-index: 2;
-}
-
-/* monkey/app: kleiner en subtiel overlappend */
-.stats__app {
-    position: absolute;
-    left: -18px;
-    bottom: -18px;
-    width: 150px;
-    height: auto;
-    z-index: 1;
+    align-items: flex-end;
+    margin-top: 36px;
 }
 
 /* =========================
    Benefits
    ========================= */
 .benefits {
-    padding: 70px 0 40px;
+    background: var(--bg-soft);
+    padding: 32px 8px;
+    height: 400px;
+    padding-left: 100px;
 }
 
 .benefits__grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr 1fr;
-    gap: 22px;
-    align-items: start;
+    grid-template-columns: 0.95fr 0.9fr 0.9fr;
+    grid-template-areas:
+        "intro c1 c2"
+        "intro c3 c4";
+    column-gap: 26px;
+    row-gap: 18px;
 }
 
 .benefits__intro {
-    grid-column: 1 / 2;
+    grid-area: intro;
+    align-self: center;
+    padding-top: 0;
+}
+
+.benefits__grid>.benefit-card:nth-child(2) {
+    grid-area: c1;
+}
+
+.benefits__grid>.benefit-card:nth-child(3) {
+    grid-area: c2;
+}
+
+.benefits__grid>.benefit-card:nth-child(4) {
+    grid-area: c3;
+}
+
+.benefits__grid>.benefit-card:nth-child(5) {
+    grid-area: c4;
 }
 
 .benefits__title {
-    font-size: 14px;
-    font-weight: 800;
     margin: 0;
-    color: rgba(17, 24, 39, .9);
+    font-size: 24px;
+    line-height: 1.35;
+    max-width: 260px;
 }
 
 .benefit-card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 14px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    max-width: 250px;
+    padding-bottom: 32px;
+}
+
+.benefit-card__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    display: block;
 }
 
 .benefit-card h3 {
-    margin: 8px 0 6px;
-    font-size: 13px;
-    font-weight: 900;
-    color: rgba(17, 24, 39, .92);
+    margin: 0 0 6px;
+    font-size: 18px;
+    line-height: 1.25;
 }
 
 .benefit-card p {
     margin: 0;
-    font-size: 12px;
-    line-height: 1.55;
-}
-
-.benefit-card__icon {
-    width: 18px;
-    height: 18px;
-    border-radius: 6px;
-}
-
-.benefit-card__icon--pink {
-    background: #F3B8B8;
-}
-
-.benefit-card__icon--orange {
-    background: #F6C18C;
-}
-
-.benefit-card__icon--yellow {
-    background: #F7D37B;
-}
-
-.benefit-card__icon--green {
-    background: #BFE7D5;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 250px;
 }
 
 /* =========================
-   FAQ section
+   FAQ
    ========================= */
 .faq {
-    padding: 22px 0 50px;
+    background: #f7f7f7;
+    padding: 52px 0 52px;
 }
 
 .faq__grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 28px;
-    align-items: start;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 30px;
+    align-items: stretch;
 }
 
 .faq__title {
-    font-size: 14px;
+    font-size: 24px;
+    line-height: 1.2;
     font-weight: 800;
-    margin: 0 0 12px;
-    color: rgba(17, 24, 39, .9);
+    margin: 0 0 28px;
+    color: #111827;
 }
 
 .faq__list {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: #fff;
-    overflow: hidden;
+    background: transparent;
+    border: 0;
+    display: grid;
+    gap: 10px;
 }
 
 .faq-item {
-    border-bottom: 1px solid var(--border);
-}
-
-.faq-item:last-child {
-    border-bottom: 0;
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .faq-item summary {
     list-style: none;
     cursor: pointer;
-    padding: 12px 14px;
-    font-size: 12px;
-    font-weight: 700;
+    padding: 20px 22px;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 18px;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -538,112 +489,144 @@ a {
 
 .faq-item summary::after {
     content: "+";
-    font-weight: 900;
-    color: rgba(17, 24, 39, .7);
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 300;
+    color: rgba(17, 24, 39, 0.9);
+    flex-shrink: 0;
 }
 
 .faq-item[open] summary::after {
-    content: "–";
+    content: "−";
 }
 
 .faq-item__content {
-    padding: 0 14px 12px;
-    font-size: 12px;
+    padding: 0 22px 20px;
+    font-size: 14px;
     line-height: 1.6;
+    color: var(--muted);
 }
 
 /* side card */
 .faq-card {
     background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06);
+    border: 1px solid rgba(227, 215, 198, 0.9);
+    border-radius: 12px;
+    padding: 34px 28px 30px;
+
+    /* zelfde hoogte als faq__list */
+    margin-top: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .faq-card__badge {
-    width: 22px;
-    height: 22px;
-    background: #F3C55A;
-    /* geel blokje */
-    border-radius: 4px;
-    margin-bottom: 10px;
+    width: 54px;
+    height: 54px;
+    border-radius: 6px;
+    margin-bottom: 22px;
 }
 
 .faq-card h3 {
-    font-size: 13px;
-    font-weight: 900;
-    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #111827;
+    max-width: 300px;
 }
 
 .faq-card p {
-    margin: 0 0 12px;
-    font-size: 12px;
+    margin: 0 0 24px;
+    font-size: 14px;
     line-height: 1.6;
+    max-width: 310px;
+    color: var(--muted);
+}
+
+.faq-card .btn {
+    padding: 14px 28px;
+    font-size: 14px;
 }
 
 /* =========================
    Pricing
    ========================= */
 .pricing {
-    padding: 28px 0 54px;
-    background: #fff;
+    padding: 34px 0 42px;
+    background: #f7f7f7;
+    padding-bottom: 82px;
+}
+
+.pricing .container {
+    width: min(1180px, calc(100% - 96px));
 }
 
 .pricing__title {
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 1.2;
     font-weight: 800;
-    margin: 0 0 16px;
-    color: rgba(17, 24, 39, .9);
+    margin: 0 0 8px;
+    color: #111827;
+}
+
+.pricing .container>p {
+    margin: 0 0 28px;
+    max-width: 290px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--muted);
 }
 
 .pricing__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .price-card {
     background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    min-height: 320px;
+    transition: border-color 0.15s ease;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .price-card--featured {
-    border: 2px solid var(--brand-primary);
+    border: 2px solid #E5E7EB;
 }
 
-.price-card__tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 800;
-    color: rgba(17, 24, 39, .75);
-    margin-bottom: 8px;
+.price-card:hover,
+.price-card--featured:hover {
+    border-color: var(--brand-primary);
 }
 
 .price-card h3 {
-    margin: 0 0 6px;
-    font-size: 13px;
-    font-weight: 900;
-}
-
-.price-card p {
-    margin: 0 0 12px;
-    font-size: 12px;
-    line-height: 1.55;
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--brand-primary);
 }
 
 .price {
     display: flex;
     align-items: baseline;
     gap: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .price__amount {
-    font-weight: 900;
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 700;
 }
 
 .price__period {
@@ -653,146 +636,130 @@ a {
 }
 
 .price__list {
-    margin: 0 0 14px;
-    padding-left: 16px;
-    font-size: 12px;
-    color: rgba(17, 24, 39, .82);
+    margin: 0 0 18px;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(17, 24, 39, 0.88);
+
+    flex-grow: 1;
 }
 
 .price__list li {
     margin: 6px 0;
 }
 
+.price-card .btn {
+    padding: 10px 18px;
+    font-size: 12px;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
 /* =========================
    Testimonials
    ========================= */
 .testimonials {
-    padding: 44px 0 44px;
-    background: #fff;
+    background: var(--bg-soft);
+    padding: 18px 0 22px;
 }
 
 .testimonials__title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
-    margin: 0 0 16px;
-    color: rgba(17, 24, 39, .9);
+    margin: 0 0 12px;
+    color: rgba(17, 24, 39, 0.9);
 }
 
 .testimonials__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 14px;
 }
 
 .t-card {
     background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px;
+    border: 1px solid rgba(227, 215, 198, 0.8);
+    border-radius: 8px;
+    padding: 12px;
 }
 
 .t-card__stars {
     letter-spacing: 0.08em;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 11px;
     color: #F4B43C;
     margin-bottom: 8px;
 }
 
 .t-card p {
     margin: 0 0 10px;
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: 11px;
+    line-height: 1.55;
 }
 
 .t-card__meta {
-    font-size: 11px;
+    font-size: 10px;
 }
 
 /* =========================
    Final CTA
    ========================= */
 .final-cta {
-    background: var(--bg-soft);
-    padding: 38px 0 50px;
+    padding: 22px 0 32px;
 }
 
 .final-cta__inner {
-    padding: 18px 0;
+    padding: 10px 0;
 }
 
 .final-cta h2 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     margin: 0 0 6px;
 }
 
 .final-cta p {
-    margin: 0 0 12px;
-    font-size: 12px;
-    line-height: 1.6;
+    margin: 0 0 10px;
+    font-size: 11px;
+    line-height: 1.55;
 }
 
 /* =========================
    Footer
    ========================= */
 .footer {
-    background: #fff;
-    border-top: 1px solid var(--border);
-    padding: 32px 0 50px;
+    background: var(--bg-soft);
+    border-top: 1px solid rgba(227, 215, 198, 0.8);
+    padding: 26px 0 40px;
 }
 
 .footer__grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr;
-    gap: 22px;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 18px;
     align-items: start;
 }
 
 .footer__logo {
-    height: 28px;
+    height: 26px;
     width: auto;
 }
 
-.footer__col h4 {
-    margin: 0 0 10px;
-    font-size: 11px;
+.footer__col p {
+    margin: 0 0 8px;
+    font-size: 10px;
     font-weight: 900;
-    letter-spacing: .06em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(17, 24, 39, .65);
+    color: rgba(17, 24, 39, 0.6);
 }
 
 .footer__col a {
     display: block;
-    padding: 6px 0;
-    font-size: 12px;
-    color: rgba(17, 24, 39, .85);
-}
-
-/* =========================
-   Responsive additions
-   ========================= */
-@media (max-width: 900px) {
-    .benefits__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .faq__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pricing__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonials__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer__grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    padding: 5px 0;
+    font-size: 11px;
+    color: rgba(17, 24, 39, 0.85);
 }
 
 /* =========================
@@ -833,15 +800,34 @@ a {
         width: min(520px, 100%);
     }
 
-    .practice__row {
-        grid-template-columns: 1fr;
+    .practice {
+        padding: 34px 0 44px;
     }
 
-    .practice__blob {
-        width: 900px;
-        left: -420px;
-        top: -140px;
-        opacity: 0.85;
+    .practice__title {
+        margin-bottom: 18px;
+    }
+
+    .practice__row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .practice__row--top {
+        margin-bottom: 28px;
+    }
+
+    .practice__row--bottom {
+        margin-bottom: 36px;
+    }
+
+    .practice__row--stats {
+        margin-bottom: 0;
+    }
+
+    .practice__copy,
+    .practice__copy--small {
+        max-width: none;
     }
 
     .practice__visual--tablet {
@@ -849,16 +835,76 @@ a {
         min-height: auto;
     }
 
-    .practice__decor {
-        right: 50%;
-        transform: translateX(50%);
-        bottom: -12px;
-        width: 460px;
+    .practice__tablet {
+        width: min(360px, 100%);
+        margin-right: 0;
+    }
+
+    .practice__visual--stats {
+        width: min(340px, 100%);
+        min-height: 180px;
+    }
+
+    .stats__dashboard {
+        max-width: 340px;
     }
 
     .stats__app {
-        left: 0;
+        left: -4px;
         bottom: -18px;
-        width: 140px;
+        width: 92px;
+    }
+
+    .benefits {
+        padding: 22px 0 10px;
+    }
+
+    .benefits__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "intro intro"
+            "c1 c2"
+            "c3 c4";
+        column-gap: 22px;
+        row-gap: 18px;
+    }
+
+    .benefits__intro {
+        padding-top: 0;
+    }
+
+    .benefits__title {
+        font-size: 16px;
+        max-width: 220px;
+    }
+
+    .benefit-card__icon {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 8px;
+    }
+
+    .benefit-card h3 {
+        font-size: 13px;
+    }
+
+    .benefit-card p {
+        font-size: 11px;
+    }
+
+    .faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
