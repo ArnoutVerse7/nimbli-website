@@ -58,13 +58,13 @@ a {
    NAV / TOPBAR
    ========================= */
 .topbar {
-    padding: 12px 0 0;
+    padding: 24px;
 }
 
 .topbar__inner {
     background: var(--bg-soft);
-    border-radius: var(--radius-lg);
-    padding: 20px 18px;
+    border-radius: 12px;
+    padding: 12px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,7 +72,7 @@ a {
 }
 
 .brand__logo {
-    height: 26px;
+    height: 20px;
     width: auto;
     display: block;
 }
@@ -80,18 +80,25 @@ a {
 .topnav {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 22px;
 }
 
 .topnav__link {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: rgba(17, 24, 39, 0.88);
-    padding: 6px 0;
+    padding: 0px 8px;
+    line-height: 1;
 }
 
 .topnav__link:hover {
     color: rgba(17, 24, 39, 1);
+}
+
+.topbar .btn--sm {
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 1;
 }
 
 /* =========================
@@ -252,8 +259,9 @@ a {
 /* =========================
    Practice
    ========================= */
+
 .practice {
-    padding: 52px 52px;
+    padding: 52px 52px 0 52px;
 }
 
 .practice__title {
@@ -261,6 +269,7 @@ a {
     margin: 0 0 28px;
 }
 
+/* layout */
 .practice__row {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
@@ -276,23 +285,86 @@ a {
 /* rij 2 */
 .practice__row--bottom {
     margin-bottom: 56px;
-    align-items: center;
 }
 
-/* rij 3 */
+/* rij 3 (stats) */
 .practice__row--stats {
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 0;
     align-items: center;
+    gap: 120px;
 }
+
+/* =========================
+   Visuals algemeen
+   ========================= */
 
 .practice__visual img {
     width: 100%;
     height: auto;
 }
 
+/* desktop image */
+.practice__visual--desktop {
+    max-width: 720px;
+}
+
+/* tablet image */
+.practice__visual--tablet {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 280px;
+}
+
+.practice__tablet {
+    min-width: 750px;
+    margin-right: -100px;
+}
+
+/* =========================
+   Stats visual
+   ========================= */
+
+.practice__visual--stats {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    min-height: 520px;
+}
+
+/* blauwe blob */
+.stats__blob {
+    position: absolute;
+    left: -120px;
+    bottom: 0;
+    width: 520px;
+    height: auto;
+    max-width: none;
+    z-index: 1;
+}
+
+/* stats dashboard */
+.stats__dashboard {
+    position: absolute;
+    left: 140px;
+    bottom: 30px;
+    width: 430px;
+    height: auto;
+    max-width: none;
+    z-index: 2;
+}
+
+/* overschrijven algemene image rule */
+.practice__visual--stats .stats__blob,
+.practice__visual--stats .stats__dashboard {
+    width: auto;
+    height: auto;
+}
+
 .practice__copy {
     max-width: 360px;
+    padding-left: 52px;
 }
 
 .practice__copy h3 {
@@ -310,48 +382,23 @@ a {
 
 .practice__list {
     margin: 0;
-    padding-left: 14px;
+    padding-left: 18px;
     color: rgba(17, 24, 39, 0.82);
     font-size: 18px;
     line-height: 1.5;
 }
 
 .practice__list li {
-    margin: 5px 0;
+    margin: 6px 0;
 }
 
 .practice__list--checks {
     list-style: disc;
 }
 
-/* desktop */
-.practice__visual--desktop {
-    max-width: 720px;
-}
-
-.practice__row--top .practice__copy {
-    justify-self: start;
-    margin-top: 8px;
-}
-
-/* tablet */
-.practice__visual--tablet {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 280px;
-}
-
-.practice__tablet {
-    min-width: 750px;
-    margin-right: -100px;
-}
-
-.practice__visual--stats {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    margin-top: 36px;
+/* stats tekst */
+.practice__copy--stats {
+    max-width: 360px;
 }
 
 /* =========================
