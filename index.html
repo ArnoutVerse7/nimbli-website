@@ -30,8 +30,16 @@
 
             <nav class="topnav">
                 <a href="#hoe-het-werkt" class="topnav__link">Hoe het werkt</a>
-                <a href="#prijzen" class="topnav__link">Prijzen</a>
+                <a href="prijzen.html" class="topnav__link">Prijzen</a>
                 <a href="#lid-worden" class="btn btn--primary btn--sm">Lid worden</a>
+            </nav>
+        </div>
+
+        <div class="container mobile-menu" id="mobileMenu">
+            <nav class="mobile-menu__nav">
+                <a href="index.html#hoe-het-werkt" class="mobile-menu__link">Hoe het werkt</a>
+                <a href="prijzen.html" class="mobile-menu__link">Prijzen</a>
+                <a href="#" class="btn btn--primary btn--sm mobile-menu__btn">Lid worden</a>
             </nav>
         </div>
     </header>
@@ -408,7 +416,7 @@
 
             <div class="footer__col">
                 <a href="#hoe-het-werkt">Hoe het werkt</a>
-                <a href="#prijzen">Prijzen</a>
+                <a href="prijzen.html">Prijzen</a>
                 <a href="#registreren">Registreren</a>
             </div>
 
@@ -439,5 +447,25 @@
     </footer>
 
 </body>
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (navToggle && mobileMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navToggle.classList.toggle('is-open');
+            mobileMenu.classList.toggle('is-open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('is-open');
+                mobileMenu.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+</script>
 
 </html>
