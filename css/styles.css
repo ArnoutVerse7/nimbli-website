@@ -1,16 +1,18 @@
-/* =========================
-   Brand tokens
-   ========================= */
 :root {
     --brand-primary: #2BB39B;
     --brand-primary-dark: #009883;
 
-    --bg: #ffffff;
+    --bg: #FFFFFF;
     --bg-soft: #FAF5EE;
 
-    --text: #111827;
-    --muted: #4B5563;
+    --text: #000000;
+    --muted: #929292;
     --border: #E7E2D8;
+
+    --brand-yellow: #FBB92A;
+    --brand-red: #EB5E5A;
+    --brand-blue: #82B3E1;
+    --brand-dark-grey: #929292;
 
     --container: 1440px;
 
@@ -30,7 +32,7 @@ body {
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-family: "Nunito", sans-serif;
     color: var(--text);
     background: var(--bg);
 }
@@ -99,6 +101,28 @@ a {
     padding: 8px 16px;
     font-size: 12px;
     line-height: 1;
+}
+
+.nav-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--brand-primary);
+    border-radius: 999px;
+    display: block;
 }
 
 /* =========================
@@ -261,7 +285,7 @@ a {
    ========================= */
 
 .practice {
-    padding: 52px 52px 0 52px;
+    padding: 52px 52px 20px 52px;
 }
 
 .practice__title {
@@ -293,11 +317,8 @@ a {
     margin-bottom: 0;
     align-items: center;
     gap: 120px;
+    position: relative;
 }
-
-/* =========================
-   Visuals algemeen
-   ========================= */
 
 .practice__visual img {
     width: 100%;
@@ -331,17 +352,17 @@ a {
     width: 100%;
     max-width: 620px;
     min-height: 520px;
+    overflow: visible;
 }
 
-/* blauwe blob */
+/* blauwe blob / monkey */
 .stats__blob {
     position: absolute;
     left: -120px;
-    bottom: 0;
+    bottom: -20px;
     width: 520px;
     height: auto;
     max-width: none;
-    z-index: 1;
 }
 
 /* stats dashboard */
@@ -355,12 +376,11 @@ a {
     z-index: 2;
 }
 
-/* overschrijven algemene image rule */
-.practice__visual--stats .stats__blob,
-.practice__visual--stats .stats__dashboard {
-    width: auto;
-    height: auto;
-}
+
+
+/* =========================
+   Text copy
+   ========================= */
 
 .practice__copy {
     max-width: 360px;
@@ -399,6 +419,8 @@ a {
 /* stats tekst */
 .practice__copy--stats {
     max-width: 360px;
+    position: relative;
+    z-index: 3;
 }
 
 /* =========================
@@ -560,10 +582,7 @@ a {
     border: 1px solid rgba(227, 215, 198, 0.9);
     border-radius: 12px;
     padding: 34px 28px 30px;
-
-    /* zelfde hoogte als faq__list */
     margin-top: 58px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -600,9 +619,7 @@ a {
     font-size: 14px;
 }
 
-/* =========================
-   Pricing
-   ========================= */
+/*Pricing*/
 .pricing {
     padding: 34px 0 42px;
     background: #f7f7f7;
@@ -702,9 +719,7 @@ a {
     align-self: flex-start;
 }
 
-/* =========================
-   Testimonials
-   ========================= */
+/* Testimonials */
 .testimonials {
     background: var(--bg-soft);
     padding: 34px 0 42px;
@@ -776,9 +791,7 @@ a {
     color: #9AA0A6;
 }
 
-/* =========================
-   Final CTA
-   ========================= */
+/* Final CTA */
 .final-cta {
     background: #f7f7f7;
     overflow: visible;
@@ -789,7 +802,6 @@ a {
     min-height: 350px;
     display: flex;
     align-items: center;
-    /* tekst verticaal centreren */
 }
 
 .final-cta__content {
@@ -815,7 +827,6 @@ a {
     font-size: 12px;
 }
 
-/* afbeelding rechtsonder */
 .final-cta__decor {
     position: absolute;
     right: -40px;
@@ -824,9 +835,7 @@ a {
     height: auto;
 }
 
-/* =========================
-   Footer
-   ========================= */
+/* Footer */
 .footer {
     background: var(--bg-soft);
     padding: 34px 0 42px;
@@ -916,72 +925,205 @@ a {
     color: #111827;
 }
 
-/* =========================
-   Responsive
-   ========================= */
+/* Responsive */
 @media (max-width: 900px) {
     .container {
-        width: min(var(--container), calc(100% - 48px));
+        width: min(var(--container), calc(100% - 32px));
+    }
+
+    /* Header */
+    .topbar {
+        padding: 14px 0 0;
+    }
+
+    .topbar .container {
+        width: calc(100% - 30px);
+    }
+
+    .topbar__inner {
+        padding: 14px 14px;
+        border-radius: 10px;
+    }
+
+    .brand__logo {
+        height: 22px;
     }
 
     .topnav {
-        gap: 14px;
+        display: none;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 26px 0 34px;
     }
 
     .hero__inner {
         grid-template-columns: 1fr;
-        gap: 22px;
+        align-items: center;
     }
 
-    .hero {
-        padding: 28px 0 40px;
+    .hero__copy {
+        max-width: 100%;
     }
 
+    .hero__title {
+        font-size: 32px;
+        line-height: 1.05;
+    }
+
+    .hero__lead {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .hero__cta {
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .hero__cta .btn {
+        min-width: 108px;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .hero__note {
+        font-size: 10px;
+    }
+
+    .hero__visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero__visual img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    /* Portal strip */
     .portal-strip {
-        padding: 28px 0;
+        padding: 16px 0;
+    }
+
+    .portal-strip__inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .portal-strip__path {
+        max-width: 100%;
+    }
+
+    .portal-strip__card {
+        justify-self: start;
+        width: 100%;
+        padding: 12px;
+    }
+
+    .portal-strip__card h3 {
+        font-size: 24px;
+    }
+
+    .portal-strip__card p {
+        font-size: 16px;
+    }
+
+    .portal-strip__card .btn {
+        padding: 8px 14px;
+        font-size: 14px;
     }
 
     .portal-strip__inner {
         grid-template-columns: 1fr;
     }
 
-    .portal-strip__path {
-        max-width: 520px;
-    }
-
     .portal-strip__card {
-        justify-self: start;
-        width: min(520px, 100%);
+        order: 1;
     }
 
+    .portal-strip__left {
+        order: 2;
+    }
+
+    /* Practice */
     .practice {
-        padding: 34px 0 44px;
+        padding: 28px 0 34px;
     }
 
     .practice__title {
+        font-size: 24px;
         margin-bottom: 18px;
     }
 
     .practice__row {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
+        align-items: start;
+    }
+
+    .practice__visual {
+        order: 1;
+    }
+
+    .practice__copy,
+    .practice__copy--small,
+    .practice__copy--stats {
+        order: 2;
+        max-width: 100%;
     }
 
     .practice__row--top {
+        margin-top: 20px;
         margin-bottom: 28px;
     }
 
     .practice__row--bottom {
-        margin-bottom: 36px;
+        margin-bottom: 28px;
     }
 
     .practice__row--stats {
+        margin-top: 0;
         margin-bottom: 0;
+        gap: 14px;
+        position: relative;
     }
 
-    .practice__copy,
-    .practice__copy--small {
-        max-width: none;
+    .practice__visual--desktop {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+
+    .practice__copy {
+        padding-left: 0;
+    }
+
+    .practice__copy h3 {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .practice__copy p {
+        font-size: 16px;
+        line-height: 1.45;
+        margin-bottom: 8px;
+    }
+
+    .practice__list {
+        font-size: 16px;
+        line-height: 1.45;
+        padding-left: 16px;
+    }
+
+    .practice__list li {
+        margin: 4px 0;
     }
 
     .practice__visual--tablet {
@@ -990,37 +1132,59 @@ a {
     }
 
     .practice__tablet {
-        width: min(360px, 100%);
-        margin-right: 0;
+        min-width: 0;
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto;
     }
 
     .practice__visual--stats {
-        width: min(340px, 100%);
-        min-height: 180px;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        overflow: visible;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .stats__blob {
+        display: none;
     }
 
     .stats__dashboard {
-        max-width: 340px;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        margin: 0;
     }
 
-    .stats__app {
-        left: -4px;
-        bottom: -18px;
-        width: 92px;
+    .practice__copy--stats {
+        max-width: 100%;
+        position: relative;
+        z-index: 3;
+        padding-right: 0;
     }
 
+    /* Benefits */
     .benefits {
-        padding: 22px 0 10px;
+        padding: 18px 0 12px;
+        height: auto;
+        padding-left: 0;
     }
 
     .benefits__grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "intro intro"
-            "c1 c2"
-            "c3 c4";
-        column-gap: 22px;
-        row-gap: 18px;
+            "intro"
+            "c1"
+            "c2"
+            "c3"
+            "c4";
+        row-gap: 20px;
     }
 
     .benefits__intro {
@@ -1028,37 +1192,236 @@ a {
     }
 
     .benefits__title {
-        font-size: 16px;
-        max-width: 220px;
+        font-size: 20px;
+        max-width: 100%;
+    }
+
+    .benefit-card {
+        max-width: 100%;
+        padding-bottom: 0;
     }
 
     .benefit-card__icon {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
         margin-bottom: 8px;
     }
 
     .benefit-card h3 {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .benefit-card p {
-        font-size: 11px;
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq {
+        padding: 28px 0 24px;
     }
 
     .faq__grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .faq__title {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .faq-item summary {
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+
+    .faq-item summary::after {
+        font-size: 24px;
+    }
+
+    .faq-item__content {
+        padding: 0 16px 14px;
+        font-size: 11px;
+    }
+
+    .faq-card {
+        margin-top: 0;
+        padding: 18px 14px;
+    }
+
+    .faq-card__badge {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 12px;
+    }
+
+    .faq-card h3 {
+        font-size: 16px;
+    }
+
+    .faq-card p {
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    .faq-card .btn {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    /* ---------- Pricing ---------- */
+    .pricing {
+        padding: 24px 0 28px;
+        padding-bottom: 28px;
+    }
+
+    .pricing .container {
+        width: calc(100% - 32px);
+    }
+
+    .pricing__title {
+        font-size: 18px;
+    }
+
+    .pricing .container>p {
+        font-size: 12px;
+        max-width: 230px;
+        margin-bottom: 16px;
     }
 
     .pricing__grid {
         grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .price-card {
+        min-height: auto;
+        padding: 14px;
+    }
+
+    .price-card h3 {
+        font-size: 16px;
+    }
+
+    .price__amount {
+        font-size: 20px;
+    }
+
+    .price__list {
+        font-size: 11px;
+    }
+
+    .price-card .btn {
+        font-size: 11px;
+    }
+
+    /* ---------- Testimonials ---------- */
+    .testimonials {
+        padding: 24px 0 28px;
+    }
+
+    .testimonials__title {
+        font-size: 18px;
+    }
+
+    .testimonials__subtitle {
+        font-size: 12px;
+        margin-bottom: 16px;
     }
 
     .testimonials__grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
+    .t-card {
+        min-height: auto;
+        padding: 14px;
+    }
+
+    .t-card__text {
+        font-size: 12px;
+    }
+
+    /* ---------- Final CTA ---------- */
+    .final-cta__inner {
+        min-height: 170px;
+        align-items: center;
+    }
+
+    .final-cta__content {
+        max-width: 210px;
+    }
+
+    .final-cta h2 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .final-cta p {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .final-cta .btn {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .final-cta__decor {
+        right: -15px;
+        bottom: 0;
+        width: 200px;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+        padding: 20px 0 26px;
+    }
+
+    .footer .container {
+        width: calc(100% - 32px);
+    }
+
+    /* alles onder elkaar */
     .footer__grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    /* brand blok */
+    .footer__brand {
+        gap: 10px;
+    }
+
+    .footer__logo {
+        width: 90px;
+    }
+
+    .footer__socials a {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* links */
+    .footer__col {
+        gap: 10px;
+    }
+
+    .footer__col a,
+    .footer__contact a,
+    .footer__contact p {
+        font-size: 12px;
+    }
+
+    /* contact onderaan */
+    .footer__contact {
+        grid-column: auto;
+    }
+
+    .footer__contact svg {
+        width: 14px;
+        height: 14px;
     }
 }
