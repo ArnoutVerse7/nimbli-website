@@ -243,9 +243,9 @@
             userCard.innerHTML = `
                 <h3 class="user-card__title">${title}</h3>
                 <div class="user-fields">
-                    <input type="text" placeholder="Voornaam" data-field="firstName" value="${userData.firstName || ""}">
-                    <input type="text" placeholder="Achternaam" data-field="lastName" value="${userData.lastName || ""}">
-                    <input type="email" placeholder="E-mailadres" data-field="email" value="${userData.email || ""}">
+                    <input type="text" placeholder="Voornaam" data-field="firstName" value="${userData.firstName || ""}" required>
+                    <input type="text" placeholder="Achternaam" data-field="lastName" value="${userData.lastName || ""}" required>
+                    <input type="email" placeholder="E-mailadres" data-field="email" value="${userData.email || ""}" required>
                 </div>
             `;
 
@@ -333,30 +333,37 @@
         }
 
         function validateUsers() {
-            const data = getRegistrationData();
-            const users = data.users || [];
+            const inputs = document.querySelectorAll("#usersContainer input");
 
-            if (!users.length) {
-                return false;
+            for (const input of inputs) {
+                if (!input.value.trim()) {
+                    input.reportValidity();
+                    input.focus();
+                    return false;
+                }
+
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    input.focus();
+                    return false;
+                }
             }
 
-            return users.every(user =>
-                user.firstName?.trim() &&
-                user.lastName?.trim() &&
-                user.email?.trim()
-            );
+            return true;
         }
 
         function handleStep3Navigation(event) {
+            event.preventDefault();
+
             if (!validateUsers()) {
-                event.preventDefault();
-                alert("Vul eerst alle gebruikersgegevens in voor je verdergaat.");
                 return;
             }
 
             const data = getRegistrationData();
             data.currentStep = 2;
             saveRegistrationData(data);
+
+            window.location.href = "registratie3.html";
         }
 
         addUserBtn.addEventListener("click", addUser);
