@@ -66,11 +66,7 @@ a {
     position: fixed;
     width: 100vw;
     z-index: 999;
-    margin-top: 20px
-    position: fixed;
-    width: 100vw;
-    z-index: 999;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 .topbar__inner {
@@ -944,7 +940,7 @@ a {
 
     .topbar {
         position: fixed;
-        margin-top: 10px
+        margin-top: 10px;
         width: calc(100% - 24px);
     }
 
@@ -953,15 +949,8 @@ a {
         position: fixed;
         margin-top: 10px
     }
-    
+
     .topbar__inner {
-        background: var(--bg-soft);
-        border-radius: 8px;
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: inset 0 -1px 0 #E3D7C6;
         background: var(--bg-soft);
         border-radius: 8px;
         padding: 16px 24px;
@@ -1391,6 +1380,7 @@ a {
         bottom: 0;
         width: 200px;
     }
+
     /* ---------- Footer ---------- */
     .footer {
         padding: 20px 0 26px;
