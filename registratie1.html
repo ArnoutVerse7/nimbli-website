@@ -73,36 +73,36 @@
                         <div class="form-card">
                             <div class="form-group">
                                 <label for="praktijknaam">Praktijknaam</label>
-                                <input type="text" id="praktijknaam" name="praktijknaam">
+                                <input type="text" id="praktijknaam" name="praktijknaam" required>
                                 <p id="practiceError" style="color:red; display:none; margin-top:5px;"></p>
                             </div>
 
                             <div class="form-group">
                                 <label>Contactpersoon</label>
                                 <div class="form-row form-row--2">
-                                    <input type="text" name="voornaam" placeholder="Voornaam">
-                                    <input type="text" name="achternaam" placeholder="Achternaam">
+                                    <input type="text" name="voornaam" placeholder="Voornaam" required>
+                                    <input type="text" name="achternaam" placeholder="Achternaam" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="land">Land</label>
-                                <input type="text" id="land" name="land" placeholder="België">
+                                <input type="text" id="land" name="land" placeholder="België" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Adres</label>
                                 <div class="form-row form-row--adres">
-                                    <input type="text" name="straatnaam" placeholder="Straatnaam">
-                                    <input type="text" name="nummer" placeholder="Nr">
+                                    <input type="text" name="straatnaam" placeholder="Straatnaam" required>
+                                    <input type="text" name="nummer" placeholder="Nr" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label>Plaats</label>
                                 <div class="form-row form-row--2">
-                                    <input type="text" name="postcode" placeholder="Postcode">
-                                    <input type="text" name="plaatsnaam" placeholder="Plaatsnaam">
+                                    <input type="text" name="postcode" placeholder="Postcode" required>
+                                    <input type="text" name="plaatsnaam" placeholder="Plaatsnaam" required>
                                 </div>
                             </div>
                         </div>
@@ -117,27 +117,27 @@
                         <div class="form-card">
                             <div class="form-group">
                                 <label for="factuurnaam">Naam</label>
-                                <input type="text" id="factuurnaam" name="factuurnaam">
+                                <input type="text" id="factuurnaam" name="factuurnaam" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="factuurland">Land</label>
-                                <input type="text" id="factuurland" name="factuurland" placeholder="België">
+                                <input type="text" id="factuurland" name="factuurland" placeholder="België" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Adres</label>
                                 <div class="form-row form-row--adres">
-                                    <input type="text" name="factuurstraatnaam" placeholder="Straatnaam">
-                                    <input type="text" name="factuurnummer" placeholder="Nr">
+                                    <input type="text" name="factuurstraatnaam" placeholder="Straatnaam" required>
+                                    <input type="text" name="factuurnummer" placeholder="Nr" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label>Plaats</label>
                                 <div class="form-row form-row--2">
-                                    <input type="text" name="factuurpostcode" placeholder="Postcode">
-                                    <input type="text" name="factuurplaatsnaam" placeholder="Plaatsnaam">
+                                    <input type="text" name="factuurpostcode" placeholder="Postcode" required>
+                                    <input type="text" name="factuurplaatsnaam" placeholder="Plaatsnaam" required>
                                 </div>
                             </div>
                         </div>
@@ -150,17 +150,17 @@
                         <div class="form-card">
                             <div class="form-group">
                                 <label for="telefoonnummer">Telefoonnummer</label>
-                                <input type="text" id="telefoonnummer" name="telefoonnummer">
+                                <input type="text" id="telefoonnummer" name="telefoonnummer" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="email-algemeen">E-mailadres algemeen</label>
-                                <input type="email" id="email-algemeen" name="email-algemeen">
+                                <input type="email" id="email-algemeen" name="email-algemeen" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="email-facturen">E-mailadres facturen</label>
-                                <input type="email" id="email-facturen" name="email-facturen">
+                                <input type="email" id="email-facturen" name="email-facturen" required>
                             </div>
 
                             <div class="form-group">
@@ -328,6 +328,60 @@
             document.getElementById("btw").value = step1.overige?.btw || "";
         }
 
+        function validateStep1RequiredFields() {
+            const requiredFields = [
+                document.getElementById("praktijknaam"),
+                document.querySelector('input[name="voornaam"]'),
+                document.querySelector('input[name="achternaam"]'),
+                document.getElementById("land"),
+                document.querySelector('input[name="straatnaam"]'),
+                document.querySelector('input[name="nummer"]'),
+                document.querySelector('input[name="postcode"]'),
+                document.querySelector('input[name="plaatsnaam"]'),
+                document.getElementById("telefoonnummer"),
+                document.getElementById("email-algemeen"),
+                document.getElementById("email-facturen")
+            ];
+
+            const billingSameAsPractice = document.querySelector('input[name="zelfde-als-factuuradres"]')?.checked;
+
+            if (!billingSameAsPractice) {
+                requiredFields.push(
+                    document.getElementById("factuurnaam"),
+                    document.getElementById("factuurland"),
+                    document.querySelector('input[name="factuurstraatnaam"]'),
+                    document.querySelector('input[name="factuurnummer"]'),
+                    document.querySelector('input[name="factuurpostcode"]'),
+                    document.querySelector('input[name="factuurplaatsnaam"]')
+                );
+            }
+
+            for (const field of requiredFields) {
+                if (!field) continue;
+
+                if (!field.value.trim()) {
+                    field.reportValidity();
+                    field.focus();
+                    return false;
+                }
+            }
+
+            const emailFields = [
+                document.getElementById("email-algemeen"),
+                document.getElementById("email-facturen")
+            ];
+
+            for (const field of emailFields) {
+                if (field && !field.checkValidity()) {
+                    field.reportValidity();
+                    field.focus();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         async function checkPracticeExists(practiceName) {
             const normalizedName = practiceName.trim();
 
@@ -348,14 +402,13 @@
         async function handleNextStep(clickedButton) {
             hidePracticeError();
 
-            const practiceName = practiceNameInput?.value.trim() || "";
-
-            if (!practiceName) {
-                showPracticeError("Vul eerst een praktijknaam in.");
+            if (!validateStep1RequiredFields()) {
                 return;
             }
 
+            const practiceName = practiceNameInput?.value.trim() || "";
             const originalText = clickedButton.textContent;
+
             clickedButton.disabled = true;
             clickedButton.textContent = "Controleren...";
 
