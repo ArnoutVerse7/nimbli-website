@@ -12,6 +12,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/registratie3.css" />
+    <script src="js/dummy-registration.js"></script>
+
 </head>
 
 <body>
@@ -30,17 +32,17 @@
             </button>
 
             <nav class="topnav">
-                <a href="index.html#hoe-het-werkt" class="topnav__link">Hoe het werkt</a>
+                <a href="index.html" class="topnav__link">Hoe het werkt</a>
                 <a href="prijzen.html" class="topnav__link">Prijzen</a>
-                <a href="#" class="btn btn--primary btn--sm">Lid worden</a>
+                <a href="registratie1.html" class="btn btn--primary btn--sm">Lid worden</a>
             </nav>
         </div>
 
         <div class="container mobile-menu" id="mobileMenu">
             <nav class="mobile-menu__nav">
-                <a href="index.html#hoe-het-werkt" class="mobile-menu__link">Hoe het werkt</a>
+                <a href="index.html" class="mobile-menu__link">Hoe het werkt</a>
                 <a href="prijzen.html" class="mobile-menu__link">Prijzen</a>
-                <a href="#" class="btn btn--primary btn--sm mobile-menu__btn">Lid worden</a>
+                <a href="registratie1.html" class="btn btn--primary btn--sm mobile-menu__btn">Lid worden</a>
             </nav>
         </div>
     </header>
@@ -193,7 +195,7 @@
             <div class="footer__col">
                 <a href="index.html#hoe-het-werkt">Hoe het werkt</a>
                 <a href="prijzen.html">Prijzen</a>
-                <a href="#">Registreren</a>
+                <a href="registratie1.html">Registreren</a>
             </div>
 
             <div class="footer__col footer__contact">
@@ -222,17 +224,31 @@
         </div>
     </footer>
 
-
-    <script src="js/dummy-registration.js"></script>
-    <script src="js/registration.js"></script>
     <script>
         seedDummyRegistrationData();
-
         const payButton = document.getElementById("payButton");
-
         function getSafeStep1() {
             const data = getRegistrationData();
             return data.step1 || {};
+        }
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navToggle.classList.toggle('is-open');
+                mobileMenu.classList.toggle('is-open', isOpen);
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('is-open');
+                    mobileMenu.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
         }
 
         function renderInvoiceAddress() {
@@ -257,6 +273,8 @@
             <p>${factuur.postcode || ""} ${factuur.plaatsnaam || ""}</p>
         `;
         }
+
+
 
         function renderUsers() {
             const data = getRegistrationData();
@@ -307,25 +325,9 @@
             saveRegistrationData(data);
         }
 
-        function validatePayment() {
-            const cardName = document.getElementById("cardName").value.trim();
-            const cardNumber = document.getElementById("cardNumber").value.trim();
-            const expiryMonth = document.getElementById("expiryMonth").value.trim();
-            const expiryYear = document.getElementById("expiryYear").value.trim();
-            const cvv = document.getElementById("cvv").value.trim();
-
-            if (!cardName || !cardNumber || !expiryMonth || !expiryYear || !cvv) {
-                alert("Vul eerst alle betaalgegevens in.");
-                return false;
-            }
-
-            return true;
-        }
-
         payButton.addEventListener("click", () => {
-            if (!validatePayment()) return;
-
             const data = getRegistrationData();
+
             data.payment = {
                 cardName: document.getElementById("cardName").value.trim(),
                 cardNumber: document.getElementById("cardNumber").value.trim(),
@@ -333,25 +335,15 @@
                 expiryYear: document.getElementById("expiryYear").value.trim(),
                 cvv: document.getElementById("cvv").value.trim()
             };
+
             data.currentStep = 3;
             saveRegistrationData(data);
 
-            alert("Dummy betaling gelukt. Morgen kan je dit aan Supabase/Stripe koppelen.");
+            window.location.href = "succes.html";
         });
-
         renderInvoiceAddress();
         renderUsers();
         updateSummary();
-
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('is-open');
-                mobileMenu.classList.remove('is-open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-
     </script>
 </body>
 
