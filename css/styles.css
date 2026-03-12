@@ -56,9 +56,7 @@ a {
     color: var(--muted);
 }
 
-/* =========================
-   NAV / TOPBAR
-   ========================= */
+/*  NAV / TOPBAR */
 .topbar {
     padding: 24px;
 }
@@ -181,9 +179,7 @@ a {
     background: rgba(58, 138, 122, 0.07);
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* HERO */
 .hero {
     padding: 100px 52px;
 }
@@ -230,9 +226,7 @@ a {
     height: auto;
 }
 
-/* =========================
-   Portal strip
-   ========================= */
+/* Portal strip */
 .portal-strip {
     background: var(--bg-soft);
     border-top: 1px solid var(--border);
@@ -282,9 +276,7 @@ a {
     font-size: 14px;
 }
 
-/* =========================
-   Practice
-   ========================= */
+/* Practice */
 
 .practice {
     padding: 52px 52px 20px 52px;
@@ -295,7 +287,6 @@ a {
     margin: 0 0 28px;
 }
 
-/* layout */
 .practice__row {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
@@ -303,17 +294,14 @@ a {
     align-items: center;
 }
 
-/* rij 1 */
 .practice__row--top {
     margin-top: 80px;
 }
 
-/* rij 2 */
 .practice__row--bottom {
     margin-bottom: 56px;
 }
 
-/* rij 3 (stats) */
 .practice__row--stats {
     margin-top: 20px;
     margin-bottom: 0;
@@ -327,12 +315,10 @@ a {
     height: auto;
 }
 
-/* desktop image */
 .practice__visual--desktop {
     max-width: 720px;
 }
 
-/* tablet image */
 .practice__visual--tablet {
     display: flex;
     justify-content: flex-end;
@@ -345,10 +331,6 @@ a {
     margin-right: -100px;
 }
 
-/* =========================
-   Stats visual
-   ========================= */
-
 .practice__visual--stats {
     position: relative;
     width: 100%;
@@ -357,7 +339,6 @@ a {
     overflow: visible;
 }
 
-/* blauwe blob / monkey */
 .stats__blob {
     position: absolute;
     left: -120px;
@@ -367,7 +348,6 @@ a {
     max-width: none;
 }
 
-/* stats dashboard */
 .stats__dashboard {
     position: absolute;
     left: 140px;
@@ -378,12 +358,7 @@ a {
     z-index: 2;
 }
 
-
-
-/* =========================
-   Text copy
-   ========================= */
-
+/* Text copy */
 .practice__copy {
     max-width: 360px;
     padding-left: 52px;
@@ -425,9 +400,7 @@ a {
     z-index: 3;
 }
 
-/* =========================
-   Benefits
-   ========================= */
+/* Benefits */
 .benefits {
     background: var(--bg-soft);
     padding: 32px 8px;
@@ -504,9 +477,7 @@ a {
     max-width: 250px;
 }
 
-/* =========================
-   FAQ
-   ========================= */
+/* FAQ */
 .faq {
     background: #f7f7f7;
     padding: 52px 0 52px;
@@ -578,7 +549,6 @@ a {
     color: var(--muted);
 }
 
-/* side card */
 .faq-card {
     background: #fff;
     border: 1px solid rgba(227, 215, 198, 0.9);
@@ -1417,13 +1387,11 @@ a {
         width: calc(100% - 32px);
     }
 
-    /* alles onder elkaar */
     .footer__grid {
         grid-template-columns: 1fr;
         gap: 18px;
     }
 
-    /* brand blok */
     .footer__brand {
         gap: 10px;
     }
@@ -1437,7 +1405,6 @@ a {
         height: 20px;
     }
 
-    /* links */
     .footer__col {
         gap: 10px;
     }
@@ -1448,7 +1415,6 @@ a {
         font-size: 12px;
     }
 
-    /* contact onderaan */
     .footer__contact {
         grid-column: auto;
     }

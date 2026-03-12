@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nimbli — Registratie stap 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/registratie1.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <div class="container topbar__inner">
+            <a class="brand" href="index.html">
+                <img src="assets/images/Logo.png" alt="nimbli" class="brand__logo" />
+            </a>
+
+            <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="topnav">
+                <a href="index.html#hoe-het-werkt" class="topnav__link">Hoe het werkt</a>
+                <a href="prijzen.html" class="topnav__link">Prijzen</a>
+                <a href="#" class="btn btn--primary btn--sm">Lid worden</a>
+            </nav>
+        </div>
+
+        <div class="container mobile-menu" id="mobileMenu">
+            <nav class="mobile-menu__nav">
+                <a href="index.html#hoe-het-werkt" class="mobile-menu__link">Hoe het werkt</a>
+                <a href="prijzen.html" class="mobile-menu__link">Prijzen</a>
+                <a href="#" class="btn btn--primary btn--sm mobile-menu__btn">Lid worden</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="register-page">
+        <div class="container register-page__container">
+
+            <section class="register-progress">
+                <p class="register-progress__label">Stap 1 van 3</p>
+                <div class="register-progress__bar">
+                    <span class="register-progress__fill"></span>
+                </div>
+            </section>
+
+            <section class="register-header">
+                <h1 class="register-header__title">Registreer je praktijk</h1>
+                <a href="registratie2.html" class="btn btn--primary btn--sm">Volgende</a>
+            </section>
+
+            <section class="register-form">
+                <div class="register-grid">
+
+                    <!-- Linker kolom -->
+                    <div class="register-column">
+                        <h2 class="register-section__title">Praktijkadres</h2>
+
+                        <div class="form-card">
+                            <div class="form-group">
+                                <label for="praktijknaam">Praktijknaam</label>
+                                <input type="text" id="praktijknaam" name="praktijknaam">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Contactpersoon</label>
+                                <div class="form-row form-row--2">
+                                    <input type="text" name="voornaam" placeholder="Voornaam">
+                                    <input type="text" name="achternaam" placeholder="Achternaam">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="land">Land</label>
+                                <input type="text" id="land" name="land" placeholder="België">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <div class="form-row form-row--adres">
+                                    <input type="text" name="straatnaam" placeholder="Straatnaam">
+                                    <input type="text" name="nummer" placeholder="Nr">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Plaats</label>
+                                <div class="form-row form-row--2">
+                                    <input type="text" name="postcode" placeholder="Postcode">
+                                    <input type="text" name="plaatsnaam" placeholder="Plaatsnaam">
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="zelfde-als-factuuradres">
+                            <span>Praktijkadres is hetzelfde als factuuradres.</span>
+                        </label>
+
+                        <h2 class="register-section__title register-section__title--mt">Factuuradres</h2>
+
+                        <div class="form-card">
+                            <div class="form-group">
+                                <label for="factuurnaam">Naam</label>
+                                <input type="text" id="factuurnaam" name="factuurnaam">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="factuurland">Land</label>
+                                <input type="text" id="factuurland" name="factuurland" placeholder="België">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <div class="form-row form-row--adres">
+                                    <input type="text" name="factuurstraatnaam" placeholder="Straatnaam">
+                                    <input type="text" name="factuurnummer" placeholder="Nr">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Plaats</label>
+                                <div class="form-row form-row--2">
+                                    <input type="text" name="factuurpostcode" placeholder="Postcode">
+                                    <input type="text" name="factuurplaatsnaam" placeholder="Plaatsnaam">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rechter kolom -->
+                    <div class="register-column">
+                        <h2 class="register-section__title">Overige</h2>
+
+                        <div class="form-card">
+                            <div class="form-group">
+                                <label for="telefoonnummer">Telefoonnummer</label>
+                                <input type="text" id="telefoonnummer" name="telefoonnummer">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email-algemeen">E-mailadres algemeen</label>
+                                <input type="email" id="email-algemeen" name="email-algemeen">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email-facturen">E-mailadres facturen</label>
+                                <input type="email" id="email-facturen" name="email-facturen">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kvk">KVK-nummer</label>
+                                <input type="text" id="kvk" name="kvk" placeholder="Optioneel">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="btw">BTW-nummer</label>
+                                <input type="text" id="btw" name="btw" placeholder="Optioneel">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="register-mobile-action">
+                    <a href="registratie2.html" class="btn btn--primary btn--sm">Volgende</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container footer__grid">
+
+            <div class="footer__brand">
+                <img src="assets/images/Logo.png" alt="nimbli" class="footer__logo" />
+
+                <div class="footer__socials">
+                    <a href="#" aria-label="LinkedIn">
+                        <img src="assets/images/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="assets/images/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+
+                <p class="footer__copyright">© 2026 Nimbli.</p>
+            </div>
+
+            <div class="footer__col">
+                <a href="index.html#hoe-het-werkt">Hoe het werkt</a>
+                <a href="prijzen.html">Prijzen</a>
+                <a href="#">Registreren</a>
+            </div>
+
+            <div class="footer__col footer__contact">
+                <p>Contacteer ons</p>
+
+                <a href="tel:03458456712">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span>03 458 456 712</span>
+                </a>
+
+                <a href="mailto:Support@nimbli.be">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                        <path
+                            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                    </svg>
+                    <span>Support@nimbli.be</span>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/dummy-registration.js"></script>
+    <script>
+        seedDummyRegistrationData();
+
+        function saveStep1Data() {
+            const data = getRegistrationData();
+
+            data.step1 = {
+                praktijknaam: document.getElementById("praktijknaam")?.value || "",
+                contactpersoon: {
+                    voornaam: document.querySelector('input[name="voornaam"]')?.value || "",
+                    achternaam: document.querySelector('input[name="achternaam"]')?.value || ""
+                },
+                land: document.getElementById("land")?.value || "",
+                adres: {
+                    straatnaam: document.querySelector('input[name="straatnaam"]')?.value || "",
+                    nummer: document.querySelector('input[name="nummer"]')?.value || ""
+                },
+                plaats: {
+                    postcode: document.querySelector('input[name="postcode"]')?.value || "",
+                    plaatsnaam: document.querySelector('input[name="plaatsnaam"]')?.value || ""
+                },
+                zelfdeAlsFactuuradres: document.querySelector('input[name="zelfde-als-factuuradres"]')?.checked || false,
+                factuuradres: {
+                    naam: document.getElementById("factuurnaam")?.value || "",
+                    land: document.getElementById("factuurland")?.value || "",
+                    straatnaam: document.querySelector('input[name="factuurstraatnaam"]')?.value || "",
+                    nummer: document.querySelector('input[name="factuurnummer"]')?.value || "",
+                    postcode: document.querySelector('input[name="factuurpostcode"]')?.value || "",
+                    plaatsnaam: document.querySelector('input[name="factuurplaatsnaam"]')?.value || ""
+                },
+                overige: {
+                    telefoonnummer: document.getElementById("telefoonnummer")?.value || "",
+                    emailAlgemeen: document.getElementById("email-algemeen")?.value || "",
+                    emailFacturen: document.getElementById("email-facturen")?.value || "",
+                    kvk: document.getElementById("kvk")?.value || "",
+                    btw: document.getElementById("btw")?.value || ""
+                }
+            };
+
+            data.currentStep = 1;
+            saveRegistrationData(data);
+        }
+
+        document.querySelector('[href="registratie-stap2.html"]')?.addEventListener("click", saveStep1Data);
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navToggle.classList.toggle('is-open');
+                mobileMenu.classList.toggle('is-open', isOpen);
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('is-open');
+                    mobileMenu.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
