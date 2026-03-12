@@ -396,7 +396,7 @@ a {
     top: 95%;
     transform: translateY(-50%);
 
-    width: 60px;
+    width: 600px;
     height: 600px;
 
     background: url('../assets/images/monkey-vector.png') no-repeat center / contain;
@@ -1154,6 +1154,9 @@ a {
     min-height: 200px;
     align-items: center;
 }
+.final-cta {
+    padding: 20px 40px;
+}
 
 .final-cta__content {
     max-width: 210px;
@@ -1184,11 +1187,9 @@ a {
 .portal-strip__inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
-    align-items: center;
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 70%;
     height: fit-content;
 }
 
@@ -1228,17 +1229,11 @@ a {
     background-size: 300px;
     background-repeat: no-repeat;
     background-position: bottom right;
-    height: 480px;
+    height: 450px;
     grid-template-columns: 1fr;
     gap: 0;
     padding: 40px 36px;
     margin: 0;
-}
-
-.portal-strip__path {
-    width: 70%;
-    max-width: 400px;
-    display: none;
 }
 
 .hero {
@@ -1413,7 +1408,10 @@ a {
         padding: 40px 36px;
     }
 
-
+    .practice::before {
+        width: 400px;
+        height: 400px;
+    }
     /* Benefits */
     .benefits {
         padding: 18px 0 12px;
@@ -1521,7 +1519,7 @@ a {
         background-size: 250px;
         background-repeat: no-repeat;
         background-position: bottom right;
-        height: 540px;
+        height: 470px;
         grid-template-columns: 1fr;
         gap: 0;
         padding: 24px;
@@ -1532,4 +1530,17 @@ a {
         margin: 0;
         width: 100%;
     }
+
+    .hero__visual {
+        padding: 0;
+        margin-top: 40px;
+    }
+
+    .topbar {
+        width: 100%;
+    }
+
+    .portal-strip__inner {
+        width: 100%;
+}
 }
