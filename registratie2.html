@@ -12,9 +12,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/registratie2.css" />
-    <script src="js/dummy-registration.js"></script>
-
-    <script></script>
+    <script src="js/registration-storage.js"></script>
 </head>
 
 <body>
@@ -175,9 +173,8 @@
         </div>
     </footer>
 
-
     <script>
-        seedDummyRegistrationData();
+        initRegistrationStorage();
 
         const usersContainer = document.getElementById("usersContainer");
         const addUserBtn = document.getElementById("addUserBtn");
@@ -198,6 +195,7 @@
                 vat
             };
         }
+
         const navToggle = document.querySelector('.nav-toggle');
         const mobileMenu = document.getElementById('mobileMenu');
 
@@ -220,9 +218,10 @@
         function updateSummary() {
             const data = getRegistrationData();
             const users = data.users || [];
-            const pricing = calculatePricing(users.length);
+            const actualCount = users.length || 1;
+            const pricing = calculatePricing(actualCount);
 
-            document.getElementById("summaryUserCount").textContent = users.length;
+            document.getElementById("summaryUserCount").textContent = actualCount;
             document.getElementById("summaryTotalTop").textContent = formatEuro(pricing.totalIncl);
             document.getElementById("summaryExcl").textContent = formatEuro(pricing.totalExcl);
             document.getElementById("summaryVat").textContent = formatEuro(pricing.vat);
@@ -242,13 +241,13 @@
                 : `Gebruiker ${index + 1}`;
 
             userCard.innerHTML = `
-            <h3 class="user-card__title">${title}</h3>
-            <div class="user-fields">
-                <input type="text" placeholder="Voornaam" data-field="firstName" value="${userData.firstName || ""}">
-                <input type="text" placeholder="Achternaam" data-field="lastName" value="${userData.lastName || ""}">
-                <input type="email" placeholder="E-mailadres" data-field="email" value="${userData.email || ""}">
-            </div>
-        `;
+                <h3 class="user-card__title">${title}</h3>
+                <div class="user-fields">
+                    <input type="text" placeholder="Voornaam" data-field="firstName" value="${userData.firstName || ""}">
+                    <input type="text" placeholder="Achternaam" data-field="lastName" value="${userData.lastName || ""}">
+                    <input type="email" placeholder="E-mailadres" data-field="email" value="${userData.email || ""}">
+                </div>
+            `;
 
             return userCard;
         }
@@ -272,11 +271,12 @@
                             data.users[index] = {
                                 firstName: "",
                                 lastName: "",
-                                email: ""
+                                email: "",
+                                role: index === 0 ? "Beheerder" : "Gebruiker"
                             };
                         }
 
-                        data.users[index][input.dataset.field] = input.value;
+                        data.users[index][input.dataset.field] = input.value.trim();
                         saveRegistrationData(data);
                         updateSummary();
                     });
@@ -285,7 +285,6 @@
         }
 
         function renderUsers() {
-
             const data = getRegistrationData();
 
             if (!data.users || data.users.length === 0) {

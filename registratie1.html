@@ -12,8 +12,9 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/registratie1.css" />
-    <script src="js/dummy-registration.js"></script>
-
+    <script src="js/registration-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
 </head>
 
 <body>
@@ -59,7 +60,7 @@
 
             <section class="register-header">
                 <h1 class="register-header__title">Registreer je praktijk</h1>
-                <a href="registratie2.html" class="btn btn--primary btn--sm">Volgende</a>
+                <button type="button" class="btn btn--primary btn--sm" id="nextStepBtnDesktop">Volgende</button>
             </section>
 
             <section class="register-form">
@@ -73,6 +74,7 @@
                             <div class="form-group">
                                 <label for="praktijknaam">Praktijknaam</label>
                                 <input type="text" id="praktijknaam" name="praktijknaam">
+                                <p id="practiceError" style="color:red; display:none; margin-top:5px;"></p>
                             </div>
 
                             <div class="form-group">
@@ -176,7 +178,7 @@
                 </div>
 
                 <div class="register-mobile-action">
-                    <a href="registratie2.html" class="btn btn--primary btn--sm">Volgende</a>
+                    <button type="button" class="btn btn--primary btn--sm" id="nextStepBtnMobile">Volgende</button>
                 </div>
             </section>
 
@@ -235,41 +237,61 @@
     </footer>
 
     <script>
-        seedDummyRegistrationData();
+        initRegistrationStorage();
+
+        const nextButtons = [
+            document.getElementById("nextStepBtnDesktop"),
+            document.getElementById("nextStepBtnMobile")
+        ].filter(Boolean);
+
+        const practiceError = document.getElementById("practiceError");
+        const practiceNameInput = document.getElementById("praktijknaam");
+
+        function hidePracticeError() {
+            if (!practiceError) return;
+            practiceError.textContent = "";
+            practiceError.style.display = "none";
+        }
+
+        function showPracticeError(message) {
+            if (!practiceError) return;
+            practiceError.textContent = message;
+            practiceError.style.display = "block";
+        }
 
         function saveStep1Data() {
             const data = getRegistrationData();
 
             data.step1 = {
-                praktijknaam: document.getElementById("praktijknaam")?.value || "",
+                praktijknaam: document.getElementById("praktijknaam")?.value.trim() || "",
                 contactpersoon: {
-                    voornaam: document.querySelector('input[name="voornaam"]')?.value || "",
-                    achternaam: document.querySelector('input[name="achternaam"]')?.value || ""
+                    voornaam: document.querySelector('input[name="voornaam"]')?.value.trim() || "",
+                    achternaam: document.querySelector('input[name="achternaam"]')?.value.trim() || ""
                 },
-                land: document.getElementById("land")?.value || "",
+                land: document.getElementById("land")?.value.trim() || "",
                 adres: {
-                    straatnaam: document.querySelector('input[name="straatnaam"]')?.value || "",
-                    nummer: document.querySelector('input[name="nummer"]')?.value || ""
+                    straatnaam: document.querySelector('input[name="straatnaam"]')?.value.trim() || "",
+                    nummer: document.querySelector('input[name="nummer"]')?.value.trim() || ""
                 },
                 plaats: {
-                    postcode: document.querySelector('input[name="postcode"]')?.value || "",
-                    plaatsnaam: document.querySelector('input[name="plaatsnaam"]')?.value || ""
+                    postcode: document.querySelector('input[name="postcode"]')?.value.trim() || "",
+                    plaatsnaam: document.querySelector('input[name="plaatsnaam"]')?.value.trim() || ""
                 },
                 zelfdeAlsFactuuradres: document.querySelector('input[name="zelfde-als-factuuradres"]')?.checked || false,
                 factuuradres: {
-                    naam: document.getElementById("factuurnaam")?.value || "",
-                    land: document.getElementById("factuurland")?.value || "",
-                    straatnaam: document.querySelector('input[name="factuurstraatnaam"]')?.value || "",
-                    nummer: document.querySelector('input[name="factuurnummer"]')?.value || "",
-                    postcode: document.querySelector('input[name="factuurpostcode"]')?.value || "",
-                    plaatsnaam: document.querySelector('input[name="factuurplaatsnaam"]')?.value || ""
+                    naam: document.getElementById("factuurnaam")?.value.trim() || "",
+                    land: document.getElementById("factuurland")?.value.trim() || "",
+                    straatnaam: document.querySelector('input[name="factuurstraatnaam"]')?.value.trim() || "",
+                    nummer: document.querySelector('input[name="factuurnummer"]')?.value.trim() || "",
+                    postcode: document.querySelector('input[name="factuurpostcode"]')?.value.trim() || "",
+                    plaatsnaam: document.querySelector('input[name="factuurplaatsnaam"]')?.value.trim() || ""
                 },
                 overige: {
-                    telefoonnummer: document.getElementById("telefoonnummer")?.value || "",
-                    emailAlgemeen: document.getElementById("email-algemeen")?.value || "",
-                    emailFacturen: document.getElementById("email-facturen")?.value || "",
-                    kvk: document.getElementById("kvk")?.value || "",
-                    btw: document.getElementById("btw")?.value || ""
+                    telefoonnummer: document.getElementById("telefoonnummer")?.value.trim() || "",
+                    emailAlgemeen: document.getElementById("email-algemeen")?.value.trim() || "",
+                    emailFacturen: document.getElementById("email-facturen")?.value.trim() || "",
+                    kvk: document.getElementById("kvk")?.value.trim() || "",
+                    btw: document.getElementById("btw")?.value.trim() || ""
                 }
             };
 
@@ -277,7 +299,92 @@
             saveRegistrationData(data);
         }
 
-        document.querySelector('[href="registratie-stap2.html"]')?.addEventListener("click", saveStep1Data);
+        function populateStep1Form() {
+            const data = getRegistrationData();
+            const step1 = data.step1 || {};
+
+            document.getElementById("praktijknaam").value = step1.praktijknaam || "";
+            document.querySelector('input[name="voornaam"]').value = step1.contactpersoon?.voornaam || "";
+            document.querySelector('input[name="achternaam"]').value = step1.contactpersoon?.achternaam || "";
+            document.getElementById("land").value = step1.land || "";
+            document.querySelector('input[name="straatnaam"]').value = step1.adres?.straatnaam || "";
+            document.querySelector('input[name="nummer"]').value = step1.adres?.nummer || "";
+            document.querySelector('input[name="postcode"]').value = step1.plaats?.postcode || "";
+            document.querySelector('input[name="plaatsnaam"]').value = step1.plaats?.plaatsnaam || "";
+
+            document.querySelector('input[name="zelfde-als-factuuradres"]').checked = !!step1.zelfdeAlsFactuuradres;
+
+            document.getElementById("factuurnaam").value = step1.factuuradres?.naam || "";
+            document.getElementById("factuurland").value = step1.factuuradres?.land || "";
+            document.querySelector('input[name="factuurstraatnaam"]').value = step1.factuuradres?.straatnaam || "";
+            document.querySelector('input[name="factuurnummer"]').value = step1.factuuradres?.nummer || "";
+            document.querySelector('input[name="factuurpostcode"]').value = step1.factuuradres?.postcode || "";
+            document.querySelector('input[name="factuurplaatsnaam"]').value = step1.factuuradres?.plaatsnaam || "";
+
+            document.getElementById("telefoonnummer").value = step1.overige?.telefoonnummer || "";
+            document.getElementById("email-algemeen").value = step1.overige?.emailAlgemeen || "";
+            document.getElementById("email-facturen").value = step1.overige?.emailFacturen || "";
+            document.getElementById("kvk").value = step1.overige?.kvk || "";
+            document.getElementById("btw").value = step1.overige?.btw || "";
+        }
+
+        async function checkPracticeExists(practiceName) {
+            const normalizedName = practiceName.trim();
+
+            const { data, error } = await supabaseClient
+                .from("marketing_registrations")
+                .select("id, practice_name")
+                .ilike("practice_name", normalizedName)
+                .limit(1);
+
+            if (error) {
+                console.error("Practice check error:", error);
+                throw error;
+            }
+
+            return Array.isArray(data) && data.length > 0;
+        }
+
+        async function handleNextStep(clickedButton) {
+            hidePracticeError();
+
+            const practiceName = practiceNameInput?.value.trim() || "";
+
+            if (!practiceName) {
+                showPracticeError("Vul eerst een praktijknaam in.");
+                return;
+            }
+
+            const originalText = clickedButton.textContent;
+            clickedButton.disabled = true;
+            clickedButton.textContent = "Controleren...";
+
+            try {
+                const exists = await checkPracticeExists(practiceName);
+
+                if (exists) {
+                    showPracticeError("Deze praktijknaam bestaat al. Kies een andere naam.");
+                    clickedButton.disabled = false;
+                    clickedButton.textContent = originalText;
+                    return;
+                }
+
+                saveStep1Data();
+                window.location.href = "registratie2.html";
+            } catch (error) {
+                showPracticeError("Er ging iets mis bij het controleren van de praktijknaam.");
+                clickedButton.disabled = false;
+                clickedButton.textContent = originalText;
+            }
+        }
+
+        nextButtons.forEach((button) => {
+            button.addEventListener("click", () => handleNextStep(button));
+        });
+
+        practiceNameInput?.addEventListener("input", hidePracticeError);
+
+        populateStep1Form();
 
         const navToggle = document.querySelector('.nav-toggle');
         const mobileMenu = document.getElementById('mobileMenu');

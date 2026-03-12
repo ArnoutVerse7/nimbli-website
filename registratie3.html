@@ -12,8 +12,9 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/registratie3.css" />
-    <script src="js/dummy-registration.js"></script>
-
+    <script src="js/registration-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
 </head>
 
 <body>
@@ -59,7 +60,7 @@
 
             <section class="register-header">
                 <h1 class="register-header__title">Registreer je praktijk</h1>
-                <button type="button" class="btn btn--primary btn--sm" id="payButton">Betalen</button>
+                <button type="button" class="btn btn--primary btn--sm" id="payButton">Registratie verzenden</button>
             </section>
 
             <section class="register-step3">
@@ -225,8 +226,10 @@
     </footer>
 
     <script>
-        seedDummyRegistrationData();
+        initRegistrationStorage();
+
         const payButton = document.getElementById("payButton");
+
         function getSafeStep1() {
             const data = getRegistrationData();
             return data.step1 || {};
@@ -267,14 +270,12 @@
             const output = document.getElementById("invoiceAddressOutput");
 
             output.innerHTML = `
-            <p>${factuur.naam || "-"}</p>
-            <p>${factuur.land || "-"}</p>
-            <p>${factuur.straatnaam || ""} ${factuur.nummer || ""}</p>
-            <p>${factuur.postcode || ""} ${factuur.plaatsnaam || ""}</p>
-        `;
+                <p>${factuur.naam || "-"}</p>
+                <p>${factuur.land || "-"}</p>
+                <p>${factuur.straatnaam || ""} ${factuur.nummer || ""}</p>
+                <p>${factuur.postcode || ""} ${factuur.plaatsnaam || ""}</p>
+            `;
         }
-
-
 
         function renderUsers() {
             const data = getRegistrationData();
@@ -294,10 +295,10 @@
                 : "Gebruiker 1 (Beheerder)";
 
             output.innerHTML = `
-            <p>${firstUser.firstName || ""}</p>
-            <p>${firstUser.lastName || ""}</p>
-            <p>${firstUser.email || ""}</p>
-        `;
+                <p>${firstUser.firstName || ""}</p>
+                <p>${firstUser.lastName || ""}</p>
+                <p>${firstUser.email || ""}</p>
+            `;
         }
 
         function updateSummary() {
@@ -325,22 +326,85 @@
             saveRegistrationData(data);
         }
 
-        payButton.addEventListener("click", () => {
+        async function submitRegistrationToSupabase() {
             const data = getRegistrationData();
+            const step1 = data.step1 || {};
+            const users = data.users || [];
+            const summary = data.summary || {};
 
-            data.payment = {
-                cardName: document.getElementById("cardName").value.trim(),
-                cardNumber: document.getElementById("cardNumber").value.trim(),
-                expiryMonth: document.getElementById("expiryMonth").value.trim(),
-                expiryYear: document.getElementById("expiryYear").value.trim(),
-                cvv: document.getElementById("cvv").value.trim()
+            const billingSource = step1.zelfdeAlsFactuuradres
+                ? {
+                    naam: step1.praktijknaam || "",
+                    land: step1.land || "",
+                    straatnaam: step1.adres?.straatnaam || "",
+                    nummer: step1.adres?.nummer || "",
+                    postcode: step1.plaats?.postcode || "",
+                    plaatsnaam: step1.plaats?.plaatsnaam || ""
+                }
+                : (step1.factuuradres || {});
+
+            const payload = {
+                practice_name: step1.praktijknaam || null,
+                contact_first_name: step1.contactpersoon?.voornaam || null,
+                contact_last_name: step1.contactpersoon?.achternaam || null,
+                country: step1.land || null,
+                address_street: step1.adres?.straatnaam || null,
+                address_number: step1.adres?.nummer || null,
+                postal_code: step1.plaats?.postcode || null,
+                city: step1.plaats?.plaatsnaam || null,
+
+                billing_same_as_practice: !!step1.zelfdeAlsFactuuradres,
+                billing_name: billingSource.naam || null,
+                billing_country: billingSource.land || null,
+                billing_street: billingSource.straatnaam || null,
+                billing_number: billingSource.nummer || null,
+                billing_postal_code: billingSource.postcode || null,
+                billing_city: billingSource.plaatsnaam || null,
+
+                phone: step1.overige?.telefoonnummer || null,
+                email_general: step1.overige?.emailAlgemeen || null,
+                email_billing: step1.overige?.emailFacturen || null,
+                kvk: step1.overige?.kvk || null,
+                vat: step1.overige?.btw || null,
+
+                users_count: users.length || 1,
+                users_json: users,
+
+                plan_name: data.pricing?.plan || "Standaard",
+                total_incl: summary.totalIncl || 0,
+                total_excl: summary.totalExcl || 0,
+                vat_amount: summary.vat || 0
             };
 
-            data.currentStep = 3;
-            saveRegistrationData(data);
+            const { error } = await supabaseClient
+                .from("marketing_registrations")
+                .insert([payload]);
 
-            window.location.href = "succes.html";
+            if (error) {
+                console.error("Supabase insert error:", error);
+                throw error;
+            }
+        }
+
+        payButton.addEventListener("click", async () => {
+            payButton.disabled = true;
+            payButton.textContent = "Bezig met verzenden...";
+
+            try {
+                const data = getRegistrationData();
+                data.currentStep = 3;
+                saveRegistrationData(data);
+
+                await submitRegistrationToSupabase();
+                resetRegistrationData();
+                window.location.href = "succes.html";
+            } catch (error) {
+                alert("Er ging iets mis bij het verzenden. Controleer je Supabase instellingen en probeer opnieuw.");
+                payButton.disabled = false;
+                payButton.textContent = "Registratie verzenden";
+            }
         });
+
         renderInvoiceAddress();
         renderUsers();
         updateSummary();
