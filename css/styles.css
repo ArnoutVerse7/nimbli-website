@@ -18,6 +18,7 @@
 
     --radius-lg: 10px;
     --radius-btn: 4px;
+    --radius-btn: 4px;
 }
 
 /* Base */
@@ -30,6 +31,8 @@ body {
     height: 100%;
     width: 100vw;
     overflow-x: hidden;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
@@ -37,6 +40,7 @@ body {
     font-family: "Nunito", sans-serif;
     color: var(--text);
     background: var(--bg);
+    scroll-behavior: smooth;
     scroll-behavior: smooth;
 }
 
@@ -63,11 +67,16 @@ a {
     width: 100vw;
     z-index: 999;
     margin-top: 20px
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+    margin-top: 20px
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: 12px;
+    padding: 16px 93px;
     padding: 16px 93px;
     display: flex;
     align-items: center;
@@ -138,9 +147,12 @@ a {
     justify-content: center;
     gap: 8px;
     padding: 8px 24px;
+    gap: 8px;
+    padding: 8px 24px;
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
+    font-size: 1em;
     font-size: 1em;
     line-height: 1;
     white-space: nowrap;
@@ -186,12 +198,14 @@ a {
 /* HERO */
 .hero {
     padding: 150px 120px 100px 120px;
+    padding: 150px 120px 100px 120px;
 }
 
 .hero__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: auto;
     gap: auto;
 }
 
@@ -206,6 +220,7 @@ a {
 .hero__lead {
     margin: 0 0 18px;
     max-width: 52ch;
+    color: var(--text);
     color: var(--text);
     font-size: 14px;
     line-height: 1.7;
@@ -253,6 +268,7 @@ a {
 
 
 
+
 .portal-strip__card {
     justify-self: end;
     width: min(420px, 100%);
@@ -268,6 +284,7 @@ a {
 .portal-strip__card p {
     font-size: 14px;
     line-height: 1.55;
+    color: var(--text);
     color: var(--text);
     margin: 0 0 10px;
 }
@@ -329,6 +346,7 @@ a {
 
 .practice__tablet {
     min-width: 550px;
+    min-width: 550px;
     margin-right: -100px;
 }
 
@@ -337,11 +355,14 @@ a {
     width: 100%;
     max-width: 400px;
     min-height: 420px;
+    max-width: 400px;
+    min-height: 420px;
     overflow: visible;
 }
 
 .stats__blob {
     position: absolute;
+    left: -250px;
     left: -250px;
     bottom: -20px;
     width: 520px;
@@ -363,6 +384,7 @@ a {
 .practice__copy {
     max-width: 360px;
     /* padding-left: 52px; */
+    /* padding-left: 52px; */
 }
 
 .practice__copy h3 {
@@ -374,6 +396,7 @@ a {
 
 .practice__copy p {
     font-size: 16px;
+    font-size: 16px;
     line-height: 1.55;
     margin: 0 0 10px;
 }
@@ -383,11 +406,14 @@ a {
     padding-left: 18px;
     color: black;
     font-size: 16px;
+    color: black;
+    font-size: 16px;
     line-height: 1.5;
 }
 
 .practice__list li {
     margin: 6px 0;
+
 
 }
 
@@ -482,6 +508,7 @@ a {
 /* FAQ */
 .faq {
     background: white;
+    background: white;
     padding: 52px 0 52px;
 }
 
@@ -549,6 +576,7 @@ a {
     font-size: 14px;
     line-height: 1.6;
     color: var(--text);
+    color: var(--text);
 }
 
 .faq-card {
@@ -586,6 +614,7 @@ a {
     line-height: 1.6;
     max-width: 310px;
     color: var(--text);
+    color: var(--text);
 }
 
 .faq-card .btn {
@@ -596,6 +625,7 @@ a {
 /*Pricing*/
 .pricing {
     padding: 34px 0 42px;
+    background: white;
     background: white;
     padding-bottom: 82px;
 }
@@ -903,6 +933,7 @@ a {
 @media (max-width: 900px) {
     .container {
         padding: 24px 0;
+        padding: 24px 0;
     }
 
     /* Header */
@@ -914,9 +945,23 @@ a {
     .topbar {
         position: fixed;
         margin-top: 10px
+        width: calc(100% - 24px);
     }
 
+
+    .topbar {
+        position: fixed;
+        margin-top: 10px
+    }
+    
     .topbar__inner {
+        background: var(--bg-soft);
+        border-radius: 8px;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: inset 0 -1px 0 #E3D7C6;
         background: var(--bg-soft);
         border-radius: 8px;
         padding: 16px 24px;
@@ -944,15 +989,19 @@ a {
         overflow: hidden;
         transition: max-height 0.25s ease;
         margin-top: -60px;
+        margin-top: -60px;
     }
 
     .mobile-menu.is-open {
         max-height: 220px;
         margin-top: -30px;
+        margin-top: -30px;
     }
 
     .mobile-menu__nav {
         background: var(--bg-soft);
+        border-radius: 0 0px 10px 10px;
+        padding: 24px;
         border-radius: 0 0px 10px 10px;
         padding: 24px;
         box-shadow: inset 0 -1px 0 #E3D7C6;
@@ -972,6 +1021,7 @@ a {
 
     /* Hero */
     .hero {
+        padding: 140px 0 34px;
         padding: 140px 0 34px;
     }
 
@@ -1017,6 +1067,7 @@ a {
 
     .hero__visual img {
         width: 100%;
+        max-width: 300px;
         max-width: 300px;
         height: auto;
     }
@@ -1260,6 +1311,7 @@ a {
     .price-card {
         min-height: auto;
         width: 100%;
+        width: 100%;
         padding: 14px;
     }
 
@@ -1310,6 +1362,7 @@ a {
     /* ---------- Final CTA ---------- */
     .final-cta__inner {
         min-height: 200px;
+        min-height: 200px;
         align-items: center;
     }
 
@@ -1334,10 +1387,10 @@ a {
 
     .final-cta__decor {
         right: -70px;
+        right: -70px;
         bottom: 0;
         width: 200px;
     }
-
     /* ---------- Footer ---------- */
     .footer {
         padding: 20px 0 26px;

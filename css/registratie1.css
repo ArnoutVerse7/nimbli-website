@@ -61,6 +61,8 @@ a {
    ========================= */
 
 /*  NAV / TOPBAR */
+
+/*  NAV / TOPBAR */
 .topbar {
     padding: 24px;
     position: fixed;
@@ -74,11 +76,13 @@ a {
     background: var(--bg-soft);
     border-radius: 12px;
     padding: 16px 93px;
+    padding: 16px 93px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: inset 0 -1px 0 #E3D7C6;
 }
+
 
 
 .brand__logo {
