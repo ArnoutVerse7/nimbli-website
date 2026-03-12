@@ -186,7 +186,7 @@ a {
 
 /* Contact pagina */
 .contact-page {
-    padding: 140px 0 70px;
+    padding: 120px 32px;
 }
 
 .contact-page__container {
@@ -205,12 +205,11 @@ a {
 .contact-title {
     font-size: 26px;
     font-weight: 800;
-    margin: 0 0 12px;
+    margin-top: 20px;
 }
 
 .contact-intro {
     font-size: 14px;
-    color: var(--muted);
     margin-bottom: 24px;
     max-width: 420px;
 }
@@ -371,7 +370,7 @@ a {
 }
 
 /* Mobile */
-@media (max-width:900px) {
+@media (max-width:768px) {
     .container {
         width: calc(100% - 32px);
     }
@@ -450,7 +449,7 @@ a {
     }
 
     .contact-page {
-        padding: 100px 0 40px;
+        padding: 100px 32px;
     }
 
     .contact-page__container {
@@ -485,7 +484,7 @@ a {
 
     /* Footer */
     .footer {
-        padding: 20px 0 26px;
+        padding: 40px 32px;
     }
 
     .footer .container {

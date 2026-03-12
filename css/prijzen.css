@@ -185,7 +185,7 @@ a {
 
 /* PAGE */
 .pricing-page {
-    padding: 140px 0 48px;
+    padding: 120px 32px;
 }
 
 .pricing-page__container {
@@ -416,7 +416,7 @@ a {
 /* =========================
    MOBILE
    ========================= */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .container {
         width: calc(100% - 32px);
     }
@@ -496,7 +496,7 @@ a {
 
     /* Page */
     .pricing-page {
-        padding: 100px 0 30px;
+        padding: 120px 0 30px;
     }
 
     .pricing-page__container {
@@ -512,8 +512,8 @@ a {
     }
 
     .pricing-page__intro {
-        font-size: 11px;
-        max-width: 220px;
+        font-size: 12px;
+        margin-bottom: 18px;
     }
 
     /* Plans */
@@ -576,7 +576,7 @@ a {
 
     /* Footer */
     .footer {
-        padding: 20px 0 26px;
+        padding: 40px 32px;
     }
 
     .footer .container {

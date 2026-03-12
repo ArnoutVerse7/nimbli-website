@@ -185,7 +185,7 @@ a {
 
 /* Success */
 .success-page {
-    padding: 140px 0 90px;
+    padding: 140px 32px;
     min-height: 52vh;
 }
 
