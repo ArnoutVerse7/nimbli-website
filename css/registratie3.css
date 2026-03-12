@@ -57,14 +57,20 @@ a {
 }
 
 /* NAV / TOPBAR */
+
+/*  NAV / TOPBAR */
 .topbar {
     padding: 24px;
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+    margin-top: 20px
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: 12px;
-    padding: 12px 50px;
+    padding: 16px 93px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -539,18 +545,26 @@ a {
     }
 
     /* Header */
-    .topbar {
-        padding: 14px 0 0;
-    }
+   /* Header */
+   .topbar .container {
+    width: calc(100% - 24px);
+}
 
-    .topbar .container {
-        width: calc(100% - 30px);
-    }
 
-    .topbar__inner {
-        padding: 14px 14px;
-        border-radius: 10px;
-    }
+.topbar {
+    position: fixed;
+    margin-top: 10px
+}
+
+.topbar__inner {
+    background: var(--bg-soft);
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: inset 0 -1px 0 #E3D7C6;
+}
 
     .brand__logo {
         height: 22px;
