@@ -66,24 +66,20 @@ a {
 .topbar {
     padding: 24px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 999;
+    margin-top: 0;
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: 12px;
-    padding: 16px 93px;
-    padding: 16px 93px;
+    padding: 18px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: inset 0 -1px 0 #E3D7C6;
 }
-
-
 
 .brand__logo {
     height: 20px;
@@ -98,7 +94,7 @@ a {
 }
 
 .topnav__link {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(17, 24, 39, 0.88);
     padding: 0px 8px;
@@ -110,8 +106,8 @@ a {
 }
 
 .topbar .btn--sm {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
     line-height: 1;
 }
 
@@ -358,7 +354,7 @@ a {
 /* Footer */
 .footer {
     background: var(--bg-soft);
-    padding: 34px 0 42px;
+    padding: 40px 120px;
 }
 
 .footer .container {
