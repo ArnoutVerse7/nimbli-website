@@ -66,7 +66,7 @@ a {
     position: fixed;
     width: 100vw;
     z-index: 999;
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .topbar__inner {
@@ -214,8 +214,8 @@ a {
 }
 
 .hero__lead {
-    margin: 0 0 18px;
-    max-width: 52ch;
+    margin: 0px 0px 18px;
+    max-width: 48ch;
     color: var(--text);
     color: var(--text);
     font-size: 14px;
@@ -940,14 +940,7 @@ a {
 
     .topbar {
         position: fixed;
-        margin-top: 10px;
         width: calc(100% - 24px);
-    }
-
-
-    .topbar {
-        position: fixed;
-        margin-top: 10px
     }
 
     .topbar__inner {
