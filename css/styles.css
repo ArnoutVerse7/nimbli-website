@@ -292,12 +292,17 @@ a {
 
 .practice {
     padding: 80px 120px 80px 120px;
+    /* align-items: center;
+    display: flex;
+    flex-direction: column; */
 }
 
 .practice__grid {
     display: flex;
     flex-direction: column;
     gap: 80px;
+    align-items: center;
+
 }
 
 .practice__title {
@@ -362,6 +367,7 @@ a {
 .practice__row--bottom {
     position: relative;
     z-index: 1;
+    gap: 20px;
 }
 
 .practice__row--bottom::after {
@@ -419,8 +425,36 @@ a {
 .benefits {
     background: var(--bg-soft);
     padding: 40px 120px;
+
     /* height: 400px; */
     /* padding-left: 100px; */
+}
+
+@media (max-width: 14400px) {
+    .benefits {
+        padding: 40px 23vw;
+    }
+    .faq {
+        margin: 40px 18vw;
+    }
+    .pricing {
+        margin: 40px 18vw;
+    }
+    .testimonials {
+        padding: 40px 23vw !important;
+    }
+    .final-cta {
+        padding: 40px 23vw !important;
+    }
+    .footer {
+        padding: 40px 23vw !important;
+    }
+    .practice__title {
+        text-align: center;
+    }
+    .hero {
+        padding: 150px 23vw 100px 23vw !important;
+    }
 }
 
 .benefits__grid {
