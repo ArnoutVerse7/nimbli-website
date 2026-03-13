@@ -50,6 +50,7 @@ a {
 .container {
     width: min(var(--container), calc(100% - 96px));
     margin-inline: auto;
+    
 }
 
 .muted {
@@ -139,11 +140,11 @@ a {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px 16px;
+    padding: 8px 24px;
+    font-size: 16px;
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -159,8 +160,8 @@ a {
 }
 
 .btn--sm {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
     line-height: 1;
 }
 
@@ -168,6 +169,9 @@ a {
     background: var(--brand-primary);
     border: 2px solid var(--brand-primary);
     color: #fff;
+    padding: 8px 24px;
+    font-size: 16px;
+
 }
 
 .btn--primary:hover {
@@ -187,8 +191,7 @@ a {
 
 /* Wachtwoord pagina */
 .password-page {
-    padding: 140px 32px;
-    min-height: 60vh;
+    padding: 20vh 32px;
 }
 
 .password-page__container {
@@ -209,7 +212,7 @@ a {
 
 .password-title {
     margin: 0 0 8px;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 1.15;
     font-weight: 800;
     color: #111827;
@@ -217,7 +220,7 @@ a {
 
 .password-subtitle {
     margin: 0 0 18px;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.5;
     color: #111827;
 }
@@ -233,7 +236,7 @@ a {
 .form-group label {
     display: block;
     margin-bottom: 6px;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.2;
     font-weight: 700;
     color: #111827;
@@ -241,13 +244,12 @@ a {
 
 .form-group input {
     width: 100%;
-    height: 38px;
     border: 1px solid #BFC4CA;
     border-radius: 4px;
     background: #FFFFFF;
-    padding: 0 10px;
+    padding: 12px;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: #111827;
     outline: none;
 }
@@ -271,7 +273,7 @@ a {
     position: relative;
     padding-left: 16px;
     margin: 6px 0;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.5;
     color: #6B7280;
 }
@@ -348,7 +350,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -473,6 +475,7 @@ a {
 
     .password-page__container {
         width: calc(100% - 32px);
+        max-width: 80vw;
     }
 
     .password-layout {
@@ -491,7 +494,7 @@ a {
     }
 
     .password-subtitle {
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 12px;
     }
 
@@ -500,13 +503,13 @@ a {
     }
 
     .form-group label {
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 5px;
     }
 
     .form-group input {
         height: 32px;
-        font-size: 11px;
+        font-size: 14px;
         padding: 0 8px;
     }
 
@@ -515,7 +518,7 @@ a {
     }
 
     .password-rules li {
-        font-size: 12px;
+        font-size: 14px;
         margin: 5px 0;
         padding-left: 14px;
     }
@@ -525,7 +528,7 @@ a {
     }
 
     .password-form .btn {
-        font-size: 12px;
+        font-size: 14px;
         padding: 10px 24px;
         font-weight: 700;
     }
@@ -564,7 +567,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {

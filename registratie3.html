@@ -284,20 +284,22 @@
             const title = document.getElementById("usersTitle");
 
             if (!users.length) {
-                title.textContent = "Gebruiker 1 (Beheerder)";
-                output.innerHTML = `<p>-</p>`;
-                return;
+            title.textContent = "Gebruiker 1 (Beheerder)";
+            output.innerHTML = `<p>-</p>`;
+            return;
             }
 
             const firstUser = users[0];
             title.textContent = users.length > 1
-                ? `Gebruiker 1 (Beheerder) + ${users.length - 1} extra`
-                : "Gebruiker 1 (Beheerder)";
+            ? `Gebruiker 1 (Beheerder) + ${users.length - 1} extra`
+            : "Gebruiker 1 (Beheerder)";
 
             output.innerHTML = `
-                <p>${firstUser.firstName || ""}</p>
-                <p>${firstUser.lastName || ""}</p>
-                <p>${firstUser.email || ""}</p>
+            <div class="user-name">
+                <span>${firstUser.firstName || ""}</span>
+                <span>${firstUser.lastName || ""}</span>
+            </div>
+            <p>${firstUser.email || ""}</p>
             `;
         }
 

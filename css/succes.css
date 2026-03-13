@@ -137,11 +137,11 @@ a {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px 16px;
+    padding: 8px 24px;
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -157,15 +157,19 @@ a {
 }
 
 .btn--sm {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
     line-height: 1;
+    margin-right: 8px;
 }
 
 .btn--primary {
     background: var(--brand-primary);
     border: 2px solid var(--brand-primary);
     color: #fff;
+    padding: 8px 24px;
+    font-size: 16px;
+
 }
 
 .btn--primary:hover {
@@ -217,7 +221,7 @@ a {
 
 .success-subtitle {
     margin: 0 0 22px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.4;
     color: #111827;
 }
@@ -228,10 +232,9 @@ a {
 
 .success-text p {
     margin: 0 0 14px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     color: #111827;
-    max-width: 360px;
 }
 
 .success-text strong {
@@ -240,7 +243,7 @@ a {
 
 .success-resend p {
     margin: 0 0 8px;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.4;
     color: #111827;
 }
@@ -297,7 +300,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -421,7 +424,7 @@ a {
     }
 
     .success-page__container {
-        width: calc(100% - 32px);
+        width: calc(100% - 80px);
     }
 
     .success-card {
@@ -451,7 +454,7 @@ a {
         font-size: 16px;
         line-height: 1.5;
         margin-bottom: 10px;
-        max-width: 200px;
+        max-width: 70vw;
     }
 
     .success-resend p {
@@ -498,7 +501,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {

@@ -142,7 +142,7 @@ a {
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -159,7 +159,7 @@ a {
 
 .btn--sm {
     padding: 8px 16px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1;
 }
 
@@ -228,7 +228,7 @@ a {
 
 .contact-form label {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     margin-bottom: 6px;
 }
@@ -240,7 +240,7 @@ a {
     border-radius: 4px;
     padding: 8px 10px;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .contact-form textarea {
@@ -266,7 +266,7 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .contact-divider {
@@ -331,7 +331,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -466,7 +466,7 @@ a {
     }
 
     .contact-intro {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .contact-form {
@@ -475,7 +475,7 @@ a {
 
     .contact-form input,
     .contact-form textarea {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .contact-card {
@@ -516,7 +516,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {

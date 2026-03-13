@@ -147,7 +147,7 @@ a {
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -163,8 +163,8 @@ a {
 }
 
 .btn--sm {
-    padding: 9px 12px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 14px;
 }
 
 .btn--primary {
@@ -199,18 +199,18 @@ a {
 }
 
 .register-progress {
-    margin-bottom: 18px;
+    margin-bottom: 40px;
 }
 
 .register-progress__label {
     margin: 0 0 8px;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.2;
     color: #929292;
 }
 
 .register-progress__bar {
-    width: 160px;
+    width: 100%;
     height: 8px;
     background: #E7E7E7;
     border-radius: 999px;
@@ -232,13 +232,13 @@ a {
     justify-content: space-between;
     gap: 20px;
     padding-bottom: 12px;
-    margin-bottom: 26px;
+    margin-bottom: 64px;
     border-bottom: 1px solid #D8D8D8;
 }
 
 .register-header__title {
     margin: 0;
-    font-size: 18px;
+    font-size: 32px;
     line-height: 1.2;
     font-weight: 800;
     color: #111827;
@@ -260,8 +260,8 @@ a {
 }
 
 .register-section__title {
-    margin: 0 0 12px;
-    font-size: 15px;
+    margin: 0 0 24px;
+    font-size: 24px;
     line-height: 1.2;
     font-weight: 700;
     color: #111827;
@@ -274,7 +274,7 @@ a {
 .form-card {
     background: #FAF5EE;
     border-radius: 8px;
-    padding: 14px;
+    padding: 32px 24px;
 }
 
 .form-group {
@@ -288,7 +288,7 @@ a {
 .form-group label {
     display: block;
     margin-bottom: 6px;
-    font-size: 11px;
+    font-size: 18px;
     line-height: 1.2;
     font-weight: 700;
     color: #111827;
@@ -309,15 +309,15 @@ a {
 
 .form-group input {
     width: 100%;
-    height: 34px;
     border: 1px solid #BFC4CA;
     border-radius: 4px;
     background: #FFFFFF;
-    padding: 0 10px;
+    padding: 12px;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: #111827;
     outline: none;
+    margin-bottom: 12px;
 }
 
 .form-group input::placeholder {
@@ -334,9 +334,10 @@ a {
     align-items: center;
     gap: 8px;
     margin-top: 12px;
-    font-size: 11px;
+    margin-bottom: 40px;
+    font-size: 14px;
     line-height: 1.4;
-    color: #6B7280;
+    color: black;
     cursor: pointer;
 }
 
@@ -403,7 +404,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -516,6 +517,12 @@ a {
         align-self: flex-start;
     }
 
+
+    .btn {
+        padding: 8px 24px;
+        font-size: 14px;
+    }
+
     .register-page {
         padding: 100px 0 28px;
     }
@@ -529,12 +536,12 @@ a {
     }
 
     .register-progress__label {
-        font-size: 9px;
+        font-size: 12px;
         margin-bottom: 6px;
     }
 
     .register-progress__bar {
-        width: 96px;
+        width: 100%;
         height: 6px;
     }
 
@@ -545,8 +552,8 @@ a {
     }
 
     .register-header__title {
-        font-size: 14px;
-    }
+        font-size: 18px; 
+     }
 
     .register-header .btn {
         display: none;
@@ -558,7 +565,7 @@ a {
     }
 
     .register-section__title {
-        font-size: 12px;
+        font-size: 16px;
         margin-bottom: 10px;
     }
 
@@ -582,7 +589,7 @@ a {
 
     .form-group input {
         height: 30px;
-        font-size: 11px;
+        font-size: 14px;
         padding: 0 8px;
     }
 
@@ -641,7 +648,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {
