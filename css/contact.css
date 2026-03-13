@@ -27,13 +27,15 @@
 html,
 body {
     height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Cabinet Grotesk', system-ui, sans-serif;
+    scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
+h1, h2, h3, h4, h5, .btn{ 
     font-family: "Nunito", sans-serif;
-    color: var(--text);
-    background: var(--bg);
 }
 
 img {
