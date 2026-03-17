@@ -530,7 +530,7 @@ a {
     }
 
     .register-page__container {
-        width: calc(100% - 32px);
+        width: 100%;
     }
 
     .register-progress {
@@ -563,7 +563,7 @@ a {
 
     .register-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 40px;
     }
 
     .register-section__title {
@@ -613,16 +613,17 @@ a {
 
     .register-mobile-action {
         display: block;
-        margin-top: 14px;
+        margin-top: 40px;
     }
 
-    /* ---------- Footer ---------- */
+
+    /* Footer */
     .footer {
-        padding:40px;
+        padding: 40px 0;
     }
 
     .footer .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 60px);
     }
 
     .footer__grid {

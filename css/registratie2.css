@@ -470,26 +470,19 @@ a {
         width: min(var(--container), calc(100% - 32px));
     }
 
-    .btn {
-        padding: 8px 24px;
-        font-size: 14px;
-    }
-
-    /* Header */
     .topbar .container {
         width: calc(100% - 24px);
     }
 
 
     .topbar {
-        padding: 24px;
+        padding: 12px;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
     }
-    
+
     .topbar__inner {
         background: var(--bg-soft);
         border-radius: 8px;
@@ -543,13 +536,19 @@ a {
         align-self: flex-start;
     }
 
+
+    .btn {
+        padding: 8px 24px;
+        font-size: 14px;
+    }
+
     .register-page {
-        padding: 100px 24px;
+        padding: 100px 32px;
 
     }
 
     .register-page__container {
-        width: calc(100% - 32px);
+        width: 100%;
     }
 
     .register-progress {
@@ -574,7 +573,7 @@ a {
     }
 
     .register-header__title {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .register-header .btn {
@@ -643,14 +642,15 @@ a {
     }
 
     /* ---------- Footer ---------- */
+
+    /* Footer */
     .footer {
-        padding:40px;
+        padding: 40px 0;
     }
 
     .footer .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 60px);
     }
-
     .footer__grid {
         grid-template-columns: 1fr;
         gap: 18px;

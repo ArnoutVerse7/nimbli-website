@@ -546,11 +546,11 @@ a {
 
     /* Footer */
     .footer {
-        padding:40px;
+        padding: 40px 0;
     }
 
     .footer .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 60px);
     }
 
     .footer__grid {
