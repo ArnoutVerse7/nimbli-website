@@ -187,7 +187,7 @@ a {
 
 /* PAGE */
 .pricing-page {
-    padding: 120px 32px;
+    padding: 140px 32px;
 }
 
 .pricing-page__container {
@@ -513,7 +513,7 @@ a {
     }
 
     .pricing-page__container {
-        width: calc(100% - 32px);
+        width: calc(100% - 48px);
     }
 
     .pricing-page__hero {
