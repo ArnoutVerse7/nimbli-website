@@ -1491,7 +1491,7 @@ a {
     }
     /* ---------- Footer ---------- */
 .footer {
-    padding: 20px 40px;
+    padding: 40px;
 }
 
 .footer .container {
@@ -1536,7 +1536,7 @@ a {
 }
 
 .final-cta {
-    padding: 0px 40px ;
+    padding: 24px 40px ;
 }
 .practice__row--bottom::after {
     right: -150px;
