@@ -452,6 +452,9 @@ a {
     .hero {
         padding: 150px 18vw 100px 18vw !important;
     }
+    .portal-strip {
+        padding: 0px 18vw !important;
+    }
 }
 
 .benefits__grid {
