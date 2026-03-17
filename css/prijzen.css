@@ -295,6 +295,20 @@ a {
 
 .pricing-plan__list li {
     margin: 6px 0;
+    list-style: none;
+}
+
+
+
+.pricing-plan__list li::before {
+    content: "✓";
+    /* position: absolute;
+    left: 0;
+    top: 0; */
+    color: var(--brand-primary);
+    font-weight: 700;
+    margin-left: -18px;
+    margin-right: 6px;
 }
 
 /* =========================

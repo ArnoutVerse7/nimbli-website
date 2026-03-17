@@ -55,6 +55,17 @@ a {
     
 }
 
+.heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.slot {
+    width: 2em;
+    margin-bottom: 24px;
+}
+
 .muted {
     color: var(--muted);
 }
@@ -197,7 +208,7 @@ a {
 }
 
 .password-page__container {
-    width: min(1180px, calc(100% - 96px));
+    width: min(1180px, calc(100% - 120px));
     margin: 0 auto;
 }
 
@@ -213,7 +224,7 @@ a {
 }
 
 .password-title {
-    margin: 0 0 8px;
+    margin: 0px;
     font-size: 32px;
     line-height: 1.15;
     font-weight: 800;
@@ -221,7 +232,7 @@ a {
 }
 
 .password-subtitle {
-    margin: 0 0 18px;
+    margin: 0;
     font-size: 18px;
     line-height: 1.5;
     color: #111827;
@@ -471,13 +482,12 @@ a {
     }
 
     .password-page {
-        padding: 140px 0 40px;
+        /* padding: 140px 0 40px; */
         min-height: auto;
     }
 
     .password-page__container {
         width: calc(100% - 32px);
-        max-width: 80vw;
     }
 
     .password-layout {
@@ -501,7 +511,7 @@ a {
     }
 
     .form-group {
-        margin-bottom: 10px;
+        margin-bottom: 24px;
     }
 
     .form-group label {
@@ -510,9 +520,8 @@ a {
     }
 
     .form-group input {
-        height: 32px;
+        max-width: 400px;
         font-size: 14px;
-        padding: 0 8px;
     }
 
     .password-rules {
@@ -537,7 +546,7 @@ a {
 
     /* Footer */
     .footer {
-        padding: 20px 0 26px;
+        padding: 32px;
     }
 
     .footer .container {
