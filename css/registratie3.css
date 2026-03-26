@@ -28,15 +28,16 @@
 html,
 body {
     height: 100%;
-}
-
-body {
+    width: 100vw;
+    overflow-x: hidden;
     margin: 0;
-    font-family: "Nunito", sans-serif;
-    color: var(--text);
-    background: var(--bg);
+    font-family: 'Cabinet Grotesk', system-ui, sans-serif;
+    scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4, h5, .btn{ 
+    font-family: "Nunito", sans-serif;
+}
 img {
     max-width: 100%;
     display: block;
@@ -57,20 +58,19 @@ a {
 }
 
 /*  NAV / TOPBAR */
+/*  NAV / TOPBAR */
 .topbar {
     padding: 24px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 999;
+    margin-top: 0;
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: 12px;
-    padding: 16px 93px;
-    padding: 16px 93px;
+    padding: 18px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,7 +90,7 @@ a {
 }
 
 .topnav__link {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(17, 24, 39, 0.88);
     padding: 0px 8px;
@@ -102,10 +102,11 @@ a {
 }
 
 .topbar .btn--sm {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
     line-height: 1;
 }
+
 
 .nav-toggle {
     display: none;
@@ -139,11 +140,11 @@ a {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 18px;
+    padding: 8px 24px;
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -159,8 +160,8 @@ a {
 }
 
 .btn--sm {
-    padding: 9px 12px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
 }
 
 .btn--primary {
@@ -188,7 +189,7 @@ a {
 /* Registratie stap 3 */
 
 .register-page {
-    padding: 140px 0 48px;
+    padding: 140px 32px;
 }
 
 .register-page__container {
@@ -196,18 +197,18 @@ a {
 }
 
 .register-progress {
-    margin-bottom: 18px;
+    margin-bottom: 40px;
 }
 
 .register-progress__label {
     margin: 0 0 8px;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.2;
     color: #929292;
 }
 
 .register-progress__bar {
-    width: 160px;
+    width: 100%;
     height: 8px;
     background: #E7E7E7;
     border-radius: 999px;
@@ -238,7 +239,7 @@ a {
 
 .register-header__title {
     margin: 0;
-    font-size: 18px;
+    font-size: 32px;
     line-height: 1.2;
     font-weight: 800;
     color: #111827;
@@ -246,8 +247,8 @@ a {
 
 .register-step3__grid {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 60px;
+    grid-template-columns: 1fr 0.8fr;
+    gap: auto;
     align-items: start;
 }
 
@@ -257,10 +258,10 @@ a {
 
 .register-subtitle {
     margin: 0 0 10px;
-    font-size: 13px;
+    font-size: 18px;
     line-height: 1.2;
     font-weight: 700;
-    color: #111827;
+    color: black;
 }
 
 .register-summary {
@@ -270,7 +271,7 @@ a {
 .summary-card {
     background: #FAF5EE;
     border-radius: 8px;
-    padding: 14px;
+    padding: 24px 32px;
 }
 
 .summary-row {
@@ -279,7 +280,7 @@ a {
     gap: 12px;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 11px;
+    font-size: 16px;
     color: #7A7A7A;
 }
 
@@ -298,7 +299,7 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 800;
     color: #111827;
 }
@@ -314,7 +315,7 @@ a {
     border-radius: 8px;
     padding: 14px;
     margin-bottom: 12px;
-    max-width: 360px;
+    max-width: 80%;
 }
 
 .overview-card__edit {
@@ -327,7 +328,7 @@ a {
     border-radius: 999px;
     background: #F6C9D8;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -336,7 +337,7 @@ a {
 
 .overview-card h4 {
     margin: 0 0 8px;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.2;
     font-weight: 700;
     color: #111827;
@@ -344,14 +345,14 @@ a {
 
 .overview-card__content p {
     margin: 0 0 3px;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.45;
     color: #4B5563;
 }
 
 .payment-section {
     margin-top: 22px;
-    max-width: 360px;
+    max-width: 80%;
 }
 
 .payment-card {
@@ -362,16 +363,15 @@ a {
 
 .payment-method {
     width: 100%;
-    height: 36px;
     border: 1px solid #BFC4CA;
     border-radius: 4px;
     background: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 0 10px;
+    padding: 12px;
     font-family: "Nunito", sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     color: #111827;
     cursor: pointer;
     margin-bottom: 12px;
@@ -390,6 +390,12 @@ a {
     grid-template-columns: 1fr 86px;
     gap: 10px;
     align-items: end;
+    justify-content: center;
+}
+
+.user-name {
+    font-size: 14px;
+    color: #4B5563;
 }
 
 .payment-row__split {
@@ -398,8 +404,8 @@ a {
     gap: 8px;
 }
 
-.form-group {
-    margin-bottom: 12px;
+.form-group, .form-group--cvv {
+    margin-bottom: 12px !important;
 }
 
 .form-group:last-child {
@@ -409,7 +415,7 @@ a {
 .form-group label {
     display: block;
     margin-bottom: 6px;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.2;
     font-weight: 700;
     color: #111827;
@@ -417,13 +423,12 @@ a {
 
 .form-group input {
     width: 100%;
-    height: 34px;
     border: 1px solid #BFC4CA;
     border-radius: 4px;
     background: #FFFFFF;
-    padding: 0 10px;
+    padding: 12px;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: #111827;
     outline: none;
 }
@@ -439,7 +444,7 @@ a {
 
 .payment-divider {
     margin: 2px 0 10px;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.4;
     color: #111827;
 }
@@ -451,7 +456,7 @@ a {
 /* Footer */
 .footer {
     background: var(--bg-soft);
-    padding: 34px 0 42px;
+    padding: 40px 120px;
 }
 
 .footer .container {
@@ -500,7 +505,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -544,10 +549,11 @@ a {
         width: min(var(--container), calc(100% - 32px));
     }
 
-    /* Header */
+
     .topbar .container {
         width: calc(100% - 24px);
     }
+
 
     .topbar {
         padding: 12px;
@@ -610,9 +616,40 @@ a {
         align-self: flex-start;
     }
 
-    .register-page {
-        padding: 100px 0 28px;
+
+    .btn {
+        padding: 8px 24px;
+        font-size: 14px;
     }
+
+    .register-page {
+        padding: 100px 32px;
+
+    }
+
+    .register-page__container {
+        width: 100%;
+    }
+
+
+    .register-progress {
+        margin-bottom: 14px;
+        margin-top: 20px;
+    }
+
+    .register-progress__label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .register-progress__bar {
+        width: 100%;
+        height: 6px;
+    }
+
+    .register-header__title {
+        font-size: 18px; 
+     }
 
     .register-step3__grid {
         grid-template-columns: 1fr;
@@ -624,7 +661,7 @@ a {
     }
 
     .register-subtitle {
-        font-size: 11px;
+        font-size: 14px;
         margin-bottom: 8px;
     }
 
@@ -637,16 +674,16 @@ a {
     .overview-card__edit {
         width: 20px;
         height: 20px;
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .overview-card h4 {
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 6px;
     }
 
     .overview-card__content p {
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 2px;
     }
 
@@ -661,7 +698,7 @@ a {
 
     .payment-method {
         height: 32px;
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
 
@@ -670,14 +707,13 @@ a {
     }
 
     .form-group label {
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 5px;
     }
 
     .form-group input {
-        height: 30px;
-        font-size: 11px;
-        padding: 0 8px;
+        font-size: 14px;
+            padding: 8px;
     }
 
     .payment-row {
@@ -690,7 +726,7 @@ a {
     }
 
     .payment-divider {
-        font-size: 10px;
+        font-size: 14px;
         margin: 0 0 8px;
     }
 
@@ -698,13 +734,14 @@ a {
         margin-top: 18px;
     }
 
-    /* ---------- Footer ---------- */
+ 
+    /* Footer */
     .footer {
-        padding: 20px 0 26px;
+        padding: 40px 0;
     }
 
     .footer .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 60px);
     }
 
     .footer__grid {
@@ -732,7 +769,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {
@@ -742,5 +779,8 @@ a {
     .footer__contact svg {
         width: 14px;
         height: 14px;
+    }
+    .btn--outline {
+        display: none;
     }
 }

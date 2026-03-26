@@ -28,13 +28,15 @@
 html,
 body {
     height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Cabinet Grotesk', system-ui, sans-serif;
+    scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
+h1, h2, h3, h4, h5, .btn{ 
     font-family: "Nunito", sans-serif;
-    color: var(--text);
-    background: var(--bg);
 }
 
 img {
@@ -57,27 +59,24 @@ a {
 }
 
 /*  NAV / TOPBAR */
+/*  NAV / TOPBAR */
 .topbar {
     padding: 24px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 999;
+    margin-top: 0;
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: 12px;
-    padding: 16px 93px;
-    padding: 16px 93px;
+    padding: 18px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: inset 0 -1px 0 #E3D7C6;
 }
-
-
 
 .brand__logo {
     height: 20px;
@@ -92,7 +91,7 @@ a {
 }
 
 .topnav__link {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(17, 24, 39, 0.88);
     padding: 0px 8px;
@@ -104,10 +103,11 @@ a {
 }
 
 .topbar .btn--sm {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
     line-height: 1;
 }
+
 
 .nav-toggle {
     display: none;
@@ -141,11 +141,11 @@ a {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 18px;
+    padding: 8px 24px;
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -161,8 +161,8 @@ a {
 }
 
 .btn--sm {
-    padding: 9px 12px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
 }
 
 .btn--primary {
@@ -190,7 +190,7 @@ a {
 /* Registratie stap 2 */
 
 .register-page {
-    padding: 140px 0 48px;
+    padding: 140px 32px;
 }
 
 .register-page__container {
@@ -198,18 +198,18 @@ a {
 }
 
 .register-progress {
-    margin-bottom: 18px;
+    margin-bottom: 40px;
 }
 
 .register-progress__label {
     margin: 0 0 8px;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.2;
     color: #929292;
 }
 
 .register-progress__bar {
-    width: 160px;
+    width: 100%;
     height: 8px;
     background: #E7E7E7;
     border-radius: 999px;
@@ -240,7 +240,7 @@ a {
 
 .register-header__title {
     margin: 0;
-    font-size: 18px;
+    font-size: 32px;
     line-height: 1.2;
     font-weight: 800;
     color: #111827;
@@ -248,14 +248,14 @@ a {
 
 .register-step2__grid {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr 0.8fr;
     gap: 80px;
     align-items: start;
 }
 
 .register-section__title {
     margin: 0 0 12px;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.2;
     font-weight: 700;
     color: #111827;
@@ -267,7 +267,7 @@ a {
 
 .user-card__title {
     margin: 0 0 10px;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 700;
     color: #111827;
 }
@@ -280,15 +280,15 @@ a {
 
 .user-fields input {
     width: 100%;
-    height: 34px;
     border: 1px solid #BFC4CA;
     border-radius: 4px;
     background: #FFFFFF;
-    padding: 0 10px;
+    padding: 12px;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: #111827;
     outline: none;
+    margin-bottom: 0px;
 }
 
 .user-fields input::placeholder {
@@ -303,15 +303,21 @@ a {
 .register-add-user {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
     margin-top: 4px;
     padding: 0;
     border: 0;
     background: transparent;
-    color: #6B7280;
+    color: black;
     font-family: "Nunito", sans-serif;
-    font-size: 11px;
+    font-size: 16px;
     cursor: pointer;
+}
+
+.register-add-user .plus {
+    font-size: 24px;
+    margin-bottom: 4px;
 }
 
 .register-step2__back {
@@ -319,13 +325,14 @@ a {
 }
 
 .register-summary {
-    min-width: 0;
+    min-width: 200px;
+    align-self: right;
 }
 
 .summary-card {
     background: #FAF5EE;
     border-radius: 8px;
-    padding: 14px;
+    padding: 24px 32px;
 }
 
 .summary-row {
@@ -334,7 +341,7 @@ a {
     gap: 12px;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 11px;
+    font-size: 16px;
     color: #7A7A7A;
 }
 
@@ -353,10 +360,11 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 800;
     color: #111827;
 }
+
 
 .register-mobile-action {
     display: none;
@@ -366,7 +374,10 @@ a {
 /* Footer */
 .footer {
     background: var(--bg-soft);
-    padding: 34px 0 42px;
+    padding: 40px 120px;
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
 }
 
 .footer .container {
@@ -415,7 +426,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -459,21 +470,19 @@ a {
         width: min(var(--container), calc(100% - 32px));
     }
 
-    /* Header */
     .topbar .container {
         width: calc(100% - 24px);
     }
 
 
     .topbar {
-        padding: 24px;
+        padding: 12px;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
     }
-    
+
     .topbar__inner {
         background: var(--bg-soft);
         border-radius: 8px;
@@ -527,25 +536,33 @@ a {
         align-self: flex-start;
     }
 
+
+    .btn {
+        padding: 8px 24px;
+        font-size: 14px;
+    }
+
     .register-page {
-        padding: 100px 0 28px;
+        padding: 100px 32px;
+
     }
 
     .register-page__container {
-        width: calc(100% - 32px);
+        width: 100%;
     }
 
     .register-progress {
         margin-bottom: 14px;
+        margin-top: 20px;
     }
 
     .register-progress__label {
-        font-size: 9px;
+        font-size: 14px;
         margin-bottom: 6px;
     }
 
     .register-progress__bar {
-        width: 96px;
+        width: 100%;
         height: 6px;
     }
 
@@ -556,7 +573,7 @@ a {
     }
 
     .register-header__title {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .register-header .btn {
@@ -569,7 +586,7 @@ a {
     }
 
     .register-section__title {
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
 
@@ -578,7 +595,7 @@ a {
     }
 
     .user-card__title {
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 8px;
     }
 
@@ -589,12 +606,12 @@ a {
 
     .user-fields input {
         height: 30px;
-        font-size: 11px;
+        font-size: 14px;
         padding: 0 8px;
     }
 
     .register-add-user {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .summary-card {
@@ -602,12 +619,12 @@ a {
     }
 
     .summary-row {
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 8px;
     }
 
     .summary-total {
-        font-size: 12px;
+        font-size: 14px;
         margin-top: 12px;
         padding-top: 10px;
     }
@@ -625,14 +642,15 @@ a {
     }
 
     /* ---------- Footer ---------- */
+
+    /* Footer */
     .footer {
-        padding: 20px 0 26px;
+        padding: 40px 0;
     }
 
     .footer .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 60px);
     }
-
     .footer__grid {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -658,7 +676,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {

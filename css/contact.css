@@ -27,13 +27,15 @@
 html,
 body {
     height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Cabinet Grotesk', system-ui, sans-serif;
+    scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
+h1, h2, h3, h4, h5, .btn{ 
     font-family: "Nunito", sans-serif;
-    color: var(--text);
-    background: var(--bg);
 }
 
 img {
@@ -56,27 +58,24 @@ a {
 }
 
 
-/* NAV / TOPBAR */
+/*  NAV / TOPBAR */
 .topbar {
     padding: 24px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 999;
+    margin-top: 0;
 }
 
 .topbar__inner {
     background: var(--bg-soft);
     border-radius: 12px;
-    padding: 16px 93px;
-    padding: 16px 93px;
+    padding: 18px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: inset 0 -1px 0 #E3D7C6;
 }
-
 
 .brand__logo {
     height: 20px;
@@ -91,7 +90,7 @@ a {
 }
 
 .topnav__link {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(17, 24, 39, 0.88);
     padding: 0px 8px;
@@ -103,10 +102,11 @@ a {
 }
 
 .topbar .btn--sm {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 16px;
     line-height: 1;
 }
+
 
 .nav-toggle {
     display: none;
@@ -144,7 +144,7 @@ a {
     border-radius: var(--radius-btn);
     border: 2px solid transparent;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 #1E7A6A;
@@ -161,7 +161,7 @@ a {
 
 .btn--sm {
     padding: 8px 16px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1;
 }
 
@@ -188,7 +188,7 @@ a {
 
 /* Contact pagina */
 .contact-page {
-    padding: 140px 0 70px;
+    padding: 140px 32px;
 }
 
 .contact-page__container {
@@ -207,12 +207,11 @@ a {
 .contact-title {
     font-size: 26px;
     font-weight: 800;
-    margin: 0 0 12px;
+    margin-top: 20px;
 }
 
 .contact-intro {
     font-size: 14px;
-    color: var(--muted);
     margin-bottom: 24px;
     max-width: 420px;
 }
@@ -231,7 +230,7 @@ a {
 
 .contact-form label {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     margin-bottom: 6px;
 }
@@ -243,7 +242,7 @@ a {
     border-radius: 4px;
     padding: 8px 10px;
     font-family: "Nunito", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .contact-form textarea {
@@ -269,7 +268,7 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .contact-divider {
@@ -285,7 +284,7 @@ a {
 /* FOOTER */
 .footer {
     background: var(--bg-soft);
-    padding: 34px 0 42px;
+    padding: 40px 120px;
 }
 
 .footer .container {
@@ -334,7 +333,7 @@ a {
 
 .footer__copyright {
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(17, 24, 39, 0.65);
 }
 
@@ -373,7 +372,7 @@ a {
 }
 
 /* Mobile */
-@media (max-width:900px) {
+@media (max-width:768px) {
     .container {
         width: calc(100% - 32px);
     }
@@ -452,7 +451,7 @@ a {
     }
 
     .contact-page {
-        padding: 100px 0 40px;
+        padding: 100px 32px;
     }
 
     .contact-page__container {
@@ -469,7 +468,7 @@ a {
     }
 
     .contact-intro {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .contact-form {
@@ -478,20 +477,21 @@ a {
 
     .contact-form input,
     .contact-form textarea {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .contact-card {
         width: 100%;
     }
 
+
     /* Footer */
     .footer {
-        padding: 20px 0 26px;
+        padding: 40px 0;
     }
 
     .footer .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 60px);
     }
 
     .footer__grid {
@@ -519,7 +519,7 @@ a {
     .footer__col a,
     .footer__contact a,
     .footer__contact p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .footer__contact {

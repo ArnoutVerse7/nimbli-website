@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+        <link rel="fonts" href="css/font.css" />
 
     <link rel="stylesheet" href="css/registratie3.css" />
     <script src="js/registration-storage.js"></script>
@@ -69,7 +70,7 @@
 
             <section class="register-header">
                 <h1 class="register-header__title">Registreer je praktijk</h1>
-                <button type="button" class="btn btn--primary btn--sm" id="payButton">Registratie verzenden</button>
+                <button type="button" class="btn btn--primary btn--sm" id="payButton">Registreren</button>
             </section>
 
             <section class="register-step3">
@@ -293,20 +294,22 @@
             const title = document.getElementById("usersTitle");
 
             if (!users.length) {
-                title.textContent = "Gebruiker 1 (Beheerder)";
-                output.innerHTML = `<p>-</p>`;
-                return;
+            title.textContent = "Gebruiker 1 (Beheerder)";
+            output.innerHTML = `<p>-</p>`;
+            return;
             }
 
             const firstUser = users[0];
             title.textContent = users.length > 1
-                ? `Gebruiker 1 (Beheerder) + ${users.length - 1} extra`
-                : "Gebruiker 1 (Beheerder)";
+            ? `Gebruiker 1 (Beheerder) + ${users.length - 1} extra`
+            : "Gebruiker 1 (Beheerder)";
 
             output.innerHTML = `
-                <p>${firstUser.firstName || ""}</p>
-                <p>${firstUser.lastName || ""}</p>
-                <p>${firstUser.email || ""}</p>
+            <div class="user-name">
+                <span>${firstUser.firstName || ""}</span>
+                <span>${firstUser.lastName || ""}</span>
+            </div>
+            <p>${firstUser.email || ""}</p>
             `;
         }
 
