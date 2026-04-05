@@ -305,7 +305,7 @@ p {
    PASSWORD PAGE
 ======================= */
 .password-page {
-    padding: calc(var(--header-height-space) + 34px) 0 72px;
+    padding: calc(var(--header-height-space) + 34px) 0 80px;
 }
 
 .password-page__container {
@@ -315,9 +315,10 @@ p {
 
 .password-layout {
     display: grid;
-    grid-template-columns: 390px 1fr;
-    gap: 70px;
+    grid-template-columns: 1fr 1fr;
+    gap: auto;
     align-items: center;
+    justify-content: center !important;
 }
 
 .password-content {
@@ -403,11 +404,11 @@ p {
     font-weight: 700;
 }
 
-.password-visual {
+/* .password-visual {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .password-visual img {
     width: min(520px, 100%);

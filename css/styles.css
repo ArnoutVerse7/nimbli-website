@@ -311,7 +311,7 @@ ul {
 
 .hero__inner {
     display: grid;
-    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
     align-items: center;
     gap: 58px;
 }
@@ -322,7 +322,6 @@ ul {
 
 .hero__title {
     margin: 0 0 18px;
-    letter-spacing: -0.03em;
 }
 
 .hero__lead {
@@ -335,11 +334,16 @@ ul {
 
 .hero__cta {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
+
+.hero__cta btn {
+    height: 22px !important;
+}
+
 
 .hero__note {
     font-size: var(--body-sm-size);
@@ -613,7 +617,6 @@ ul {
     font-size: 28px;
     line-height: 33px;
     font-weight: 700;
-    letter-spacing: -0.01em;
 }
 
 .benefits__grid {
@@ -640,7 +643,6 @@ ul {
     font-size: 20px;
     /* line-height: 33px; */
     font-weight: 600;
-    letter-spacing: -0.01em;
     color: #111111;
 }
 
@@ -810,7 +812,7 @@ ul {
 
 /* price */
 .pricing-card__price {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 800;
     margin-bottom: 16px;
 }
@@ -897,7 +899,6 @@ ul {
     margin-bottom: 12px;
     font-size: 12px;
     line-height: 1;
-    letter-spacing: 0.14em;
     color: #F0B43A;
 }
 
@@ -1743,3 +1744,282 @@ ul {
         padding: 64px 24px;
     }
 }
+
+
+
+
+
+
+/* =======================
+   GENERIC FORM PAGES
+======================= */
+.signup-page {
+    background: #ffffff;
+    padding-top: 80px;
+}
+
+.signup-main {
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signup-benefits, .check-list li {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.signup-benefits li, .check-list li {
+    position: relative;
+    line-height: 1;
+    color: #333;
+    padding-left: 8px;
+
+}
+
+.signup-benefits li::before, .check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: -20px;
+    top: 0;
+    color: var(--brand-primary);
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.hero img{
+    width: 40vw;
+}
+
+@media (max-width: 900px) {
+    .signup-main {
+        flex-direction: column;
+        gap: 0px;
+        justify-content: start;
+    }
+    .hero img{
+        width: 60vw;
+    }
+    .hero {
+        padding-top: 40px;
+    }
+    .signup-copy h1 {
+        font-size: 32px !important;
+        line-height: 36px;
+        margin: 0 !important;
+    }
+    .signup-copy p {
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-copy h1 {
+        font-size: 36px !important;
+        line-height: 36px;
+    }
+    .signup-main {
+        padding: 40px 24px;
+    }    
+}
+
+.signup-hero {
+    padding: 48px 0 40px;
+}
+
+.signup-hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.signup-copy {
+    max-width: 520px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--brand-primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.signup-copy h1 {
+    margin-bottom: 16px;
+    font-size: 42px;
+    line-height: 50px;
+    width: 100%;
+}
+
+.signup-copy p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 22px;
+}
+
+.signup-benefits {
+    line-height: 28px;
+}
+
+.signup-benefits li + li {
+    margin-top: 4px;
+}
+
+.signup-card h2 {
+    margin-bottom: 8px;
+}
+
+.signup-card__intro {
+    margin-bottom: 20px;
+}
+
+.lead-form,
+.onboarding-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field span {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.form-field small {
+    font-size: 12px;
+    color: #7c7c7c;
+    font-weight: 500;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 8px 24px;
+    border: 1px solid #D8D3C9;
+    border-radius: 4px;
+    background: #fff;
+    font: inherit;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: black;
+}
+
+.btn--full {
+    width: 100%;
+}
+
+.form-note {
+    margin-top: 4px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #818181;
+}
+
+/* =======================
+   ONBOARDING
+======================= */
+.onboarding {
+    padding: 40px;
+}
+
+.onboarding__wrap {
+    max-width: 1080px;
+}
+
+.onboarding__progress {
+    margin-bottom: 28px;
+}
+
+.onboarding__progress p {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: #E8E8E8;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #84AEDD;
+}
+
+.onboarding__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.onboarding__header h1 {
+    margin-bottom: 6px;
+}
+
+.onboarding__header p {
+    color: #666;
+}
+
+@media (max-width: 480px) {
+    .signup-onboarding {
+        padding: 40px 24px;
+    }    
+}
+
+.signup-onboarding {
+    padding: 48px 0 40px;
+}
+.onboarding-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 700px;
+}
+
+.onboarding-card label {
+    padding-top: 16px;
+}
+
+.check-list li {
+    margin: 1em !important;
+}
+
+.onboarding-actions .btn--primary{
+    margin-left: 16px;
+}
+
