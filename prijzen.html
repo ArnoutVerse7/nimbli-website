@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="nl">
-
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-90QB9ECK73"></script>
@@ -8,41 +7,89 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-90QB9ECK73');
     </script>
+
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WCHTFLN3');</script>
-    <!-- End Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WCHTFLN3');
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nimbli — Prijzen</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="fonts" href="css/font.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Cabinet Grotesk";
+            src: url("./assets/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Regular.woff") format("woff");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Cabinet Grotesk";
+            src: url("./assets/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Medium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Cabinet Grotesk";
+            src: url("./assets/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff") format("woff");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Cabinet Grotesk";
+            src: url("./assets/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Extrabold.woff") format("woff");
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Cabinet Grotesk";
+            src: url("./assets/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Black.woff") format("woff");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
 
     <link rel="stylesheet" href="css/prijzen.css" />
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCHTFLN3" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- HEADER -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCHTFLN3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
     <header class="topbar">
         <div class="container topbar__inner">
-            <a class="brand" href="index.html">
+            <a class="brand" href="index.html" aria-label="Ga naar home">
                 <img src="assets/images/Logo.png" alt="nimbli" class="brand__logo" />
             </a>
 
@@ -52,152 +99,121 @@
                 <span></span>
             </button>
 
-            <nav class="topnav">
+            <nav class="topnav" aria-label="Hoofdnavigatie">
                 <a href="index.html#hoe-het-werkt" class="topnav__link">Hoe het werkt</a>
                 <a href="prijzen.html" class="topnav__link">Prijzen</a>
-                <a href="registratie1.html" class="btn btn--primary btn--sm">Lid worden</a>
+                <a href="onboarding.html" class="btn btn--primary btn--sm">Start gratis</a>
             </nav>
         </div>
 
         <div class="container mobile-menu" id="mobileMenu">
-            <nav class="mobile-menu__nav">
+            <nav class="mobile-menu__nav" aria-label="Mobiele navigatie">
                 <a href="index.html#hoe-het-werkt" class="mobile-menu__link">Hoe het werkt</a>
                 <a href="prijzen.html" class="mobile-menu__link">Prijzen</a>
-                <a href="registratie1.html" class="btn btn--primary btn--sm mobile-menu__btn">Lid worden</a>
+                <a href="onboarding.html" class="btn btn--primary btn--sm mobile-menu__btn">Start gratis</a>
             </nav>
         </div>
     </header>
 
     <main class="pricing-page">
-        <div class="container pricing-page__container">
-            <section class="pricing-page__hero">
-                <h1 class="pricing-page__title">Onze prijzen</h1>
-                <p class="pricing-page__intro">
-                    Een app die de therapietrouw vergroot per praktijk.
+        <section class="pricing-hero">
+            <div class="container">
+                <h1 class="pricing-hero__title">Onze prijzen</h1>
+                <p class="pricing-hero__intro">
+                    Eenvoudige en transparante prijzen per praktijk.
                     Kinderen en ouders gebruiken de app gratis.
                 </p>
-            </section>
+            </div>
+        </section>
 
-            <section class="pricing-stack">
-
-                <article class="pricing-plan">
-                    <div class="pricing-plan__inner">
-                        <h2 class="pricing-plan__name">Individueel</h2>
-
-                        <div class="pricing-plan__price">
-                            <span class="pricing-plan__amount">€0</span>
-                            <span class="pricing-plan__period">/ jaar</span>
+        <section class="pricing-overview">
+            <div class="container">
+                <div class="pricing-cards">
+                    <article class="pricing-card">
+                        <div class="pricing-card__icon">
+                            <img src="assets/images/starter.png" alt="">
                         </div>
 
-                        <div class="pricing-plan__body">
-                            <p>
-                                Het gratis plan is bedoeld voor kinesisten die Nimbli eerst willen uitproberen voordat
-                                ze het in hun praktijk beginnen gebruiken. Met dit plan kan je de <strong>functies van
-                                    het platform ontdekken en testen met echte patiënten.</strong>
-                            </p>
+                        <h2 class="pricing-card__title">Starter</h2>
 
-                            <p>
-                                Je kan met <strong>één kinesist werken en maximaal drie patiënten toevoegen</strong>. Zo
-                                kan je ervaren hoe oefeningen worden ingesteld, hoe kinderen thuis oefenen en hoe de
-                                voortgang wordt opgevolgd in het dashboard. </p>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">€0</span>
+                            <span class="pricing-card__period">/ jaar</span>
                         </div>
 
-                        <a href="registratie1.html" class="btn btn--primary btn--sm">Kies Individueel</a>
-                    </div>
-                </article>
+                        <ul class="pricing-card__list">
+                            <li><strong>Gratis plan om Nimbli te testen</strong></li>
+                            <li>Eén kinesist</li>
+                            <li>Max. 3 patiënten</li>
+                            <li>Oefeningen instellen en testen</li>
+                            <li>Inzicht in thuiseoefeningen</li>
+                            <li>Voortgang via dashboard</li>
+                        </ul>
 
-                <article class="pricing-plan">
-                    <div class="pricing-plan__tag">Meest gekozen</div>
+                        <a href="onboarding.html" class="btn btn--primary btn--sm">Start gratis</a>
+                    </article>
 
-                    <div class="pricing-plan__inner">
-                        <h2 class="pricing-plan__name">Standaard</h2>
-
-                        <div class="pricing-plan__price">
-                            <span class="pricing-plan__amount">Vanaf €250</span>
-                            <span class="pricing-plan__period">/ jaar</span>
+                    <article class="pricing-card">
+                        <div class="pricing-card__icon">
+                            <img src="assets/images/team.png" alt="">
                         </div>
 
-                        <div class="pricing-plan__body">
-                            <p>
-                                Het standaardplan is ontwikkeld voor praktijken die Nimbli <strong>actief willen
-                                    inzetten
-                                    binnen de dagelijkse opvolging</strong>. Dit plan is ideaal voor kinesitherapeuten
-                                die een
-                                duidelijk overzicht willen over oefenschema’s, therapietrouw en resultaten bij
-                                meerdere patiënten.
-                            </p>
+                        <h2 class="pricing-card__title">Team</h2>
 
-                            <p>
-                                Binnen dit plan kunnen <strong>meerdere kinesisten uit dezelfde praktijk</strong>
-                                gebruik maken van het platform en kunnen er <strong>onbeperkt patiënten</strong> worden
-                                toegevoegd. Je kan oefeningen combineren tot gepersonaliseerde trajecten, de voortgang
-                                van patiënten opvolgen en duidelijke rapporten bekijken in het dashboard.
-
-
-                            </p>
-
-                            <ul class="pricing-plan__list">
-                                <li><strong>1 gebruiker</strong> — €250 / jaar</li>
-                                <li><strong>Vanaf 2 gebruikers</strong> — €320 / jaar</li>
-                                <li><strong>Vanaf 3 gebruikers</strong> — €350 / jaar</li>
-                            </ul>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">Vanaf €250</span>
+                            <span class="pricing-card__period">/ jaar</span>
                         </div>
 
-                        <a href="registratie1.html" class="btn btn--primary btn--sm">Kies Standaard</a>
-                    </div>
-                </article>
+                        <ul class="pricing-card__list">
+                            <li><strong>Voor dagelijks gebruik in de praktijk</strong></li>
+                            <li>Onbeperkt aantal patiënten</li>
+                            <li><strong>1 gebruiker</strong> → €250 / jaar</li>
+                            <li><strong>Vanaf 2 tot 3 gebruikers</strong> → €400 / jaar</li>
+                            <li><strong>Vanaf 4 tot 5 gebruikers</strong> → €550 / jaar</li>
+                        </ul>
 
-                <article class="pricing-plan">
-                    <div class="pricing-plan__inner">
-                        <h2 class="pricing-plan__name">Enterprise</h2>
+                        <a href="onboarding.html" class="btn btn--primary btn--sm">Probeer gratis</a>
+                    </article>
 
-                        <div class="pricing-plan__price">
-                            <span class="pricing-plan__amount">Op maat</span>
+                    <article class="pricing-card">
+                        <div class="pricing-card__icon">
+                            <img src="assets/images/enterprise.png" alt="">
                         </div>
 
-                        <div class="pricing-plan__body">
-                            <p>
-                                Het enterprise plan is bedoeld voor grotere praktijken of organisaties met meerdere
-                                kinesisten die Nimbli op grotere schaal willen gebruiken. Voor deze praktijken voorzien
-                                we een oplossing op maat die afgestemd is op hun specifieke noden.</p>
+                        <h2 class="pricing-card__title">Enterprise</h2>
 
-                            <p>
-                                Binnen dit plan kunnen er <strong>meer dan vijf kinesisten</strong> gebruik maken van
-                                het platform en kunnen er <strong>onbeperkt patiënten</strong> worden toegevoegd.
-                                Praktijken krijgen bovendien <strong>ondersteuning bij de onboarding</strong>, zodat het
-                                platform vlot kan worden geïmplementeerd in de dagelijkse werking.</p>
-
-                            <p>
-                                Daarnaast kunnen er aangepaste licenties en extra accounts worden voorzien indien dat
-                                nodig is. Voor dit plan wordt een prijs op maat opgesteld, afhankelijk van de grootte en
-                                de behoeften van de praktijk.</p>
-
-                            <ul class="pricing-plan__list">
-                                <li><strong>Vanaf 6 gebruikers</strong></li>
-                                <li>Ondersteuning bij onboarding</li>
-                                <li>Groepsaccounts mogelijk</li>
-                                <li>Extra account op maat</li>
-                            </ul>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">Op maat</span>
                         </div>
+
+                        <ul class="pricing-card__list">
+                            <li><strong>Vanaf 6 gebruikers</strong></li>
+                            <li>Onbeperkt aantal patiënten</li>
+                            <li>Ondersteuning bij onboarding</li>
+                            <li>Flexibele prijs op aanvraag</li>
+                            <li>Extra accounts mogelijk</li>
+                        </ul>
 
                         <a href="contact.html" class="btn btn--outline btn--sm">Contacteer ons</a>
-                    </div>
-                </article>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-            </section>
-
-            <section class="pricing-page__cta">
-                <h2>Nog vragen?</h2>
-                <p>Laat het ons gerust weten. We helpen je graag verder.</p>
-                <a href="contact.html" class="btn btn--primary btn--sm">Contacteer ons</a>
-            </section>
-        </div>
+        <section class="pricing-help">
+            <div class="container">
+                <div class="pricing-help__content">
+                    <h2>Nog vragen?</h2>
+                    <p>Aarzel niet om ons te contacteren, indien je nog vragen hebt over de prijzen.</p>
+                    <a href="contact.html" class="btn btn--outline btn--sm">Contacteer ons</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer" id="contact">
         <div class="container footer__grid">
-
             <div class="footer__brand">
                 <img src="assets/images/Logo.png" alt="nimbli" class="footer__logo" />
 
@@ -216,7 +232,7 @@
             <div class="footer__col">
                 <a href="index.html#hoe-het-werkt">Hoe het werkt</a>
                 <a href="prijzen.html">Prijzen</a>
-                <a href="registratie1.html">Registreren</a>
+                <a href="onboarding.html">Registreren</a>
             </div>
 
             <div class="footer__col footer__contact">
@@ -224,24 +240,19 @@
 
                 <a href="tel:03458456712">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                            d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" />
                     </svg>
                     <span>03 458 456 712</span>
                 </a>
 
-                <a href="mailto:Support@nimbli.be">
+                <a href="mailto:support@nimbli.be">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path
-                            d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                        <path
-                            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                        <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                        <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                     </svg>
-                    <span>Support@nimbli.be</span>
+                    <span>support@nimbli.be</span>
                 </a>
             </div>
-
         </div>
     </footer>
 
@@ -266,5 +277,4 @@
         }
     </script>
 </body>
-
 </html>
