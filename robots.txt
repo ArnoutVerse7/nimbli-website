@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arnoutverse7.github.io/nimbli-website/sitemap.xml
