@@ -2055,15 +2055,21 @@ ul {
 
 @media (max-width: 480px) {
     .signup-onboarding {
-        padding: 40px 24px !important;
+        padding: 40px 0px !important;
     }  
     .onboarding {
         padding: 0;
     }  
+    .onboarding-actions{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
 }
 
 .signup-onboarding {
-    padding: 80px 40px;
+    padding: 80px 12px;
 }
 .onboarding-card {
     background: var(--bg-soft);
@@ -2081,7 +2087,4 @@ ul {
     margin: 1em !important;
 }
 
-.onboarding-actions .btn--primary{
-    margin-left: 16px;
-}
 
