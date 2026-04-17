@@ -493,7 +493,7 @@
             portalBadges.forEach((badge, index) => {
                 setTimeout(() => {
                     badge.classList.add('is-visible');
-                }, index * 450);
+                }, index * 500);
             });
         }
     
@@ -506,7 +506,7 @@
                     }
                 });
             }, {
-                threshold: 0.45
+                threshold: 0.8
             });
     
             observer.observe(portalStrip);
