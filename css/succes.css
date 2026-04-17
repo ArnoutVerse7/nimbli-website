@@ -291,18 +291,7 @@ p {
    SUCCESS PAGE
 ======================= */
 .success-page {
-    padding: calc(var(--header-height-space) + 34px) 0 88px;
-    min-height: 52vh;
-}
-
-.success-page__container {
-    width: min(var(--container), calc(100% - (var(--section-x) * 2)));
-    margin-inline: auto;
-}
-
-.success-card {
-    max-width: 460px;
-    padding-top: 8px;
+    padding: 140px 40px !important;
 }
 
 .success-icon {
@@ -349,6 +338,13 @@ p {
     font-size: 14px;
     line-height: 20px;
     color: #111827;
+}
+
+.flexbtns  {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 12px !important;
 }
 
 /* =======================
@@ -517,7 +513,7 @@ p {
     }
 
     .success-page {
-        padding: calc(var(--header-height-space) + 28px) 0 56px;
+        padding: calc(var(--header-height-space) + 28px) 0 64px;
         min-height: auto;
     }
 
@@ -576,5 +572,20 @@ p {
 
     .footer__logo {
         width: 92px;
+    }
+    .success-page {
+        padding: 140px 24px !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .success-page {
+        padding: 120px 0px !important;
+    }
+    .flexbtns  {
+        display: flex;
+        flex-direction: column;
+        gap: 12px !important;
+        width:  auto;
     }
 }

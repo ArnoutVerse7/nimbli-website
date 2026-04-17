@@ -2005,9 +2005,6 @@ ul {
 /* =======================
    ONBOARDING
 ======================= */
-.onboarding {
-    padding: 40px;
-}
 
 .onboarding__wrap {
     max-width: 1080px;
@@ -2058,12 +2055,15 @@ ul {
 
 @media (max-width: 480px) {
     .signup-onboarding {
-        padding: 40px 24px;
-    }    
+        padding: 40px 24px !important;
+    }  
+    .onboarding {
+        padding: 0;
+    }  
 }
 
 .signup-onboarding {
-    padding: 48px 0 40px;
+    padding: 80px 40px;
 }
 .onboarding-card {
     background: var(--bg-soft);
