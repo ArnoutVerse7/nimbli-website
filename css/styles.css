@@ -351,6 +351,7 @@ ul {
 
 .hero__title {
     margin: 0 0 18px;
+    font-size: 50px; 
 }
 
 .hero__lead {
@@ -1043,6 +1044,13 @@ ul {
     transform: translateY(0) scale(1);
 }
 
+@media (max-width: 1200px) {
+.hero__title {
+    margin: 0 0 18px;
+    font-size: var(--h1-size); 
+}
+}
+
 /* tablet */
 @media (max-width: 900px) {
     .hero__inner {
@@ -1096,6 +1104,7 @@ ul {
         top: 230px !important;
         left: 100px !important;
     }
+
 }
 
 /* mobiel */
@@ -1168,6 +1177,7 @@ ul {
     .pricing-card__price {
         font-size: 28px;
     }
+
 }
 
 @media (max-width: 660px) {
