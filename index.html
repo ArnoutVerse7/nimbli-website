@@ -72,6 +72,16 @@
 
   <link rel="stylesheet" href="css/font.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2282656');
+    </script>
+    <!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -126,16 +136,16 @@
                     <p class="hero__lead">
                         Nimbli helpt kinderen <strong>thuis oefenen met speelse challenges</strong>, terwijl jij als kinesitherapeut objectieve inzichten en tijdswinst krijgt zonder extra werk.
                     </p>
-
-                    <!-- <H5 style="margin-bottom: 1em; margin-top: 2em; font-weight: bold; font-size: 18px; font-family: 'Cabinet Grotesk', sans serif;">Schrijf je in voor de wachtlijst</H5> -->
-                    <div class="hero__cta">
+                    <!-- <div class="hero__cta">
                                 <label class="form-field">
                                     <input type="email" id="waitlistEmail" name="email" placeholder="Voer je e-mail in voor de wachtlijst" required>
                                 </label>
                                 <a href="onboarding.html" id="startGratisBtn" class="btn btn--primary">Start gratis</a>
-                    </div>
+                    </div> -->
 
                     <!-- <p class="hero__note">Geen verplichtingen</p> -->
+                    <div class="ml-embedded" data-form="lOY6Vr"></div>
+                    <span style="font-size: 16px; font-family: 'Cabinet Grotesk', sans serif;">Schrijf je in op de wachtlijst en krijg als eerste toegang:</span>
                 </div>
 
                 <div class="hero__visual">
@@ -422,12 +432,7 @@
                     <h2>Klaar om als eerste te starten?</h2>
                     <p>We werken momenteel hard aan de lancering van Nimbli.
                         Laat je e-mailadres achter en krijg exclusieve early access zodra we live gaan.</p>
-                    <div class="hero__cta">
-                        <label class="form-field" style="max-width: 300px;">
-                            <input type="email" name="email" placeholder="Voer je e-mail in voor de wachtlijst" required>
-                        </label>
-                        <a href="onboarding.html" class="btn btn--primary btn--sm">Start gratis</a>
-                    </div> 
+                    <div class="ml-embedded" data-form="lOY6Vr"></div>    
                 </div>
 
         
@@ -535,7 +540,7 @@
 
 
         const cta = document.querySelector('.cta');
-const btn = document.querySelector('.cta .btn');
+const btn = document.querySelector('.cta .ml-embedded');
 
 if (cta && btn) {
     btn.addEventListener('mouseenter', () => {
