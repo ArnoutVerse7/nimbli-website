@@ -35,7 +35,7 @@
   <meta name="author" content="Nimbli" />
   <meta name="robots" content="index, follow" />
 
-  <link rel="canonical" href="https://nimbli.be/" />
+  <link rel="canonical" href="https://nimbli.be" />
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -49,7 +49,7 @@
     property="og:description"
     content="Nimbli helpt kinesitherapeuten en gezinnen bij thuisrevalidatie met speelse challenges, objectieve inzichten en minder administratie."
   />
-  <meta property="og:url" content="https://nimbli.be/" />
+  <meta property="og:url" content="https://nimbli.be" />
   <meta property="og:image" content="https://nimbli.be/assets/images/preview.png" />
   <meta property="og:image:alt" content="Preview van Nimbli" />
 
@@ -101,7 +101,7 @@
             <nav class="topnav" aria-label="Hoofdnavigatie">
                 <a href="#hoe-het-werkt" class="topnav__link">Hoe het werkt</a>
                 <a href="prijzen.html" class="topnav__link">Prijzen</a>
-                <a href="onboarding.html" class="btn btn--primary btn--sm">Start gratis</a>
+                <a href="#" class="btn btn--primary btn--sm">Portaal</a>
             </nav>
         </div>
 
@@ -109,7 +109,7 @@
             <nav class="mobile-menu__nav" aria-label="Mobiele navigatie">
                 <a href="#hoe-het-werkt" class="mobile-menu__link">Hoe het werkt</a>
                 <a href="prijzen.html" class="mobile-menu__link">Prijzen</a>
-                <a href="onboarding.html" class="btn btn--primary btn--sm mobile-menu__btn">Start gratis</a>
+                <a href="#" class="btn btn--primary btn--sm mobile-menu__btn">Portaal</a>
             </nav>
         </div>
     </header>
@@ -127,14 +127,15 @@
                         Nimbli helpt kinderen <strong>thuis oefenen met speelse challenges</strong>, terwijl jij als kinesitherapeut objectieve inzichten en tijdswinst krijgt zonder extra werk.
                     </p>
 
+                    <!-- <H5 style="margin-bottom: 1em; margin-top: 2em; font-weight: bold; font-size: 18px; font-family: 'Cabinet Grotesk', sans serif;">Schrijf je in voor de wachtlijst</H5> -->
                     <div class="hero__cta">
                                 <label class="form-field">
-                                    <input type="email" name="email" placeholder="E-mailadres" required>
+                                    <input type="email" id="waitlistEmail" name="email" placeholder="Voer je e-mail in voor de wachtlijst" required>
                                 </label>
-                                <a href="onboarding.html" class="btn btn--primary">Start gratis</a>
+                                <a href="onboarding.html" id="startGratisBtn" class="btn btn--primary">Start gratis</a>
                     </div>
 
-                    <p class="hero__note">Geen verplichtingen • Geen kredietkaart nodig</p>
+                    <!-- <p class="hero__note">Geen verplichtingen</p> -->
                 </div>
 
                 <div class="hero__visual">
@@ -418,10 +419,17 @@
         <section class="final-cta">
             <div class="container cta">
                 <div class="cta__content">
-                    <h2>Klaar om te starten?</h2>
-                    <p>Start vandaag met een gratis proefperiode en ervaar hoe Nimbli je opvolging automatiseert.</p>
-                    <a href="onboarding.html" class="btn btn--primary btn--sm">Start gratis</a>
+                    <h2>Klaar om als eerste te starten?</h2>
+                    <p>We werken momenteel hard aan de lancering van Nimbli.
+                        Laat je e-mailadres achter en krijg exclusieve early access zodra we live gaan.</p>
+                    <div class="hero__cta">
+                        <label class="form-field" style="max-width: 300px;">
+                            <input type="email" name="email" placeholder="Voer je e-mail in voor de wachtlijst" required>
+                        </label>
+                        <a href="onboarding.html" class="btn btn--primary btn--sm">Start gratis</a>
+                    </div> 
                 </div>
+
         
                 <div class="cta__visual" aria-hidden="true">
                     <img src="assets/images/cta-monkey-base.png" alt="" class="cta-monkey">
@@ -539,7 +547,5 @@ if (cta && btn) {
     });
 }
     </script>
-
-    
 </body>
 </html>

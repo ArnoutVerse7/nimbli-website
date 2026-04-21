@@ -292,6 +292,7 @@ p {
 ======================= */
 .success-page {
     padding: 140px 40px !important;
+    
 }
 
 .success-icon {
@@ -304,29 +305,28 @@ p {
 }
 
 .success-title {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     font-size: 24px;
     line-height: 1.15;
     font-weight: 800;
-    color: #111827;
 }
 
 .success-subtitle {
-    margin: 0 0 22px;
+    margin: 0 0 24px;
     font-size: 18px;
     line-height: 1.4;
-    color: #111827;
+    max-width: 45ch;
 }
 
 .success-text {
     margin-bottom: 24px;
+    max-width: 50ch;
 }
 
 .success-text p {
-    margin: 0 0 14px;
-    font-size: 16px;
+    margin: 0 0 64px;
+    font-size: 18px;
     line-height: 1.6;
-    color: #111827;
 }
 
 .success-text strong {
@@ -526,34 +526,6 @@ p {
         margin-bottom: 8px;
     }
 
-    .success-title {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 6px;
-    }
-
-    .success-subtitle {
-        font-size: 14px;
-        line-height: 22px;
-        margin-bottom: 14px;
-    }
-
-    .success-text {
-        margin-bottom: 16px;
-    }
-
-    .success-text p {
-        font-size: 14px;
-        line-height: 22px;
-        margin-bottom: 10px;
-        max-width: 300px;
-    }
-
-    .success-resend p {
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 6px;
-    }
 
     .success-resend .btn {
         font-size: 14px;
