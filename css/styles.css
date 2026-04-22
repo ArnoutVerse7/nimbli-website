@@ -335,7 +335,7 @@ ul {
    HERO
 ======================= */
 .hero {
-    padding: calc(var(--header-height-space) + 34px) 62px;
+    padding: calc(var(--header-height-space) + 64px) 62px;
 }
 
 .hero__inner {
@@ -355,7 +355,7 @@ ul {
 }
 
 .hero__lead {
-    margin: 0 0 22px;
+    margin: 0 0 48px;
     font-size: var(--body-size);
     line-height: 28px;
     font-weight: var(--body-weight);
