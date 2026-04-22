@@ -382,6 +382,11 @@ p {
     gap: 12px;
 }
 
+.hero__img img{
+    width: min(100%, 570px);
+}
+
+
 .footer__socials a {
     width: 20px;
     height: 20px;
