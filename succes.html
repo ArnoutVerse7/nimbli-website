@@ -88,15 +88,14 @@
                 </div>
 
                 <div class="success-resend flexbtns">
-                    <!-- <p>Geen e-mail ontvangen?</p>
-                    <button type="button" class="btn btn--outline btn--sm" id="resendMailBtn">
-                        Opnieuw sturen
-                    </button> -->
                     <a href="index.html" class="btn btn--primary btn--sm">
                         Terug naar homepagina
                     </a>
                 </div>
             </section>
+        </div>
+        <div class="hero__img">
+            <img src="assets/images/hero2.png" alt="Nimbli succes" class="hero__img--main" />
         </div>
     </main>
 
@@ -152,23 +151,6 @@
     </footer>
 
     <script>
-        seedDummyRegistrationData();
-
-        const data = getRegistrationData();
-        const emailEl = document.getElementById("successEmail");
-        const resendBtn = document.getElementById("resendMailBtn");
-
-        const email =
-            data?.step1?.overige?.emailAlgemeen ||
-            data?.step1?.overige?.emailFacturen ||
-            "naam@email.com";
-
-        emailEl.textContent = email;
-
-        resendBtn.addEventListener("click", () => {
-            alert("Dummy mail opnieuw verstuurd naar " + email);
-        });
-
         const navToggle = document.querySelector('.nav-toggle');
         const mobileMenu = document.getElementById('mobileMenu');
 
