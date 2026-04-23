@@ -63,6 +63,16 @@
 
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2282656');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -113,13 +123,7 @@
                         kinesitherapeut objectieve inzichten en tijdswinst krijgt zonder extra werk.
                     </p>
 
-                    <div class="hero__cta">
-                        <label class="form-field">
-                            <input type="email" name="email" placeholder="E-mailadres" required>
-                        </label>
-                        <a href="onboarding.html" class="btn btn--primary">Start gratis</a>
-                    </div>
-
+    
                     <!-- <p class="hero__note">Geen verplichtingen</p> -->
                     <span
                         style="font-size: 16px; font-weight: bold; font-family: 'Cabinet Grotesk', sans serif;">Schrijf
@@ -541,14 +545,14 @@
         const btn = document.querySelector('.cta .btn');
 
         if (cta && btn) {
-            btn.addEventListener('mouseenter', () => {
-                cta.classList.add('is-excited');
-            });
+    btn.addEventListener('mouseenter', () => {
+        cta.classList.add('is-excited');
+    });
 
-            btn.addEventListener('mouseleave', () => {
-                cta.classList.remove('is-excited');
-            });
-        }
+    btn.addEventListener('mouseleave', () => {
+        cta.classList.remove('is-excited');
+    });
+}
     </script>
 
 
