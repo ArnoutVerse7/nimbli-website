@@ -291,18 +291,12 @@ p {
    SUCCESS PAGE
 ======================= */
 .success-page {
-    padding: calc(var(--header-height-space) + 34px) 0 88px;
-    min-height: 52vh;
-}
-
-.success-page__container {
-    width: min(var(--container), calc(100% - (var(--section-x) * 2)));
-    margin-inline: auto;
-}
-
-.success-card {
-    max-width: 460px;
-    padding-top: 8px;
+    padding: 180px 80px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
 .success-icon {
@@ -315,29 +309,28 @@ p {
 }
 
 .success-title {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     font-size: 24px;
     line-height: 1.15;
     font-weight: 800;
-    color: #111827;
 }
 
 .success-subtitle {
-    margin: 0 0 22px;
+    margin: 0 0 24px;
     font-size: 18px;
     line-height: 1.4;
-    color: #111827;
+    max-width: 45ch;
 }
 
 .success-text {
     margin-bottom: 24px;
+    max-width: 50ch;
 }
 
 .success-text p {
-    margin: 0 0 14px;
-    font-size: 16px;
+    margin: 0 0 64px;
+    font-size: 18px;
     line-height: 1.6;
-    color: #111827;
 }
 
 .success-text strong {
@@ -349,6 +342,13 @@ p {
     font-size: 14px;
     line-height: 20px;
     color: #111827;
+}
+
+.flexbtns  {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 12px !important;
 }
 
 /* =======================
@@ -381,6 +381,11 @@ p {
     align-items: center;
     gap: 12px;
 }
+
+.hero__img img{
+    width: min(100%, 570px);
+}
+
 
 .footer__socials a {
     width: 20px;
@@ -445,7 +450,7 @@ p {
 /* =======================
    MOBILE NAV
 ======================= */
-@media (max-width: 820px) {
+@media (max-width: 840px) {
     :root {
         --section-x: 16px;
         --header-top: 12px;
@@ -517,7 +522,7 @@ p {
     }
 
     .success-page {
-        padding: calc(var(--header-height-space) + 28px) 0 56px;
+        padding: calc(var(--header-height-space) + 28px) 0 64px;
         min-height: auto;
     }
 
@@ -530,39 +535,10 @@ p {
         margin-bottom: 8px;
     }
 
-    .success-title {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 6px;
-    }
-
-    .success-subtitle {
-        font-size: 14px;
-        line-height: 22px;
-        margin-bottom: 14px;
-    }
-
-    .success-text {
-        margin-bottom: 16px;
-    }
-
-    .success-text p {
-        font-size: 14px;
-        line-height: 22px;
-        margin-bottom: 10px;
-        max-width: 300px;
-    }
-
-    .success-resend p {
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 6px;
-    }
 
     .success-resend .btn {
         font-size: 14px;
-        min-height: 36px;
-        padding: 8px 14px;
+        padding: 8px 24px;
     }
 
     .footer {
@@ -576,5 +552,32 @@ p {
 
     .footer__logo {
         width: 92px;
+    }
+    .success-page {
+        padding: 120px 24px !important;
+        flex-direction: column;
+    }
+    .hero__img {
+        width: 70vw;
+    }
+
+    .success-card p {
+        font-size: 16px !important;
+        line-height: 20px;
+    }
+    .success-text {
+        margin: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .success-page {
+        padding: 120px 0px !important;
+    }
+    .flexbtns  {
+        display: flex;
+        flex-direction: column;
+        gap: 12px !important;
+        width:  auto;
     }
 }

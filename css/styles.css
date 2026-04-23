@@ -267,6 +267,35 @@ ul {
     transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.ml-embedded button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    min-width: 150px;
+    padding: 8px 24px !important;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    font-size: var(--btn-size);
+    line-height: var(--btn-line);
+    font-weight: var(--btn-weight);
+    white-space: nowrap;
+    box-shadow: var(--shadow-btn);
+    box-shadow: 0 2px 0 #1E7A6A !important;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, border-color 0.2s ease;
+} 
+
+.ml-embedded input {
+    padding: 12px !important;
+    border-width: 1px !important;
+}
+
+.ml-embedded {
+    margin-left: -20px;
+    margin-bottom: -6px;
+
+}
+
 .btn:active {
     transform: translateY(2px);
     box-shadow: 0 1px 0 #1E7A6A;
@@ -306,7 +335,7 @@ ul {
    HERO
 ======================= */
 .hero {
-    padding: calc(var(--header-height-space) + 34px) 62px;
+    padding: calc(var(--header-height-space) + 64px) 62px;
 }
 
 .hero__inner {
@@ -322,22 +351,21 @@ ul {
 
 .hero__title {
     margin: 0 0 18px;
+    font-size: 50px; 
 }
 
 .hero__lead {
-    margin: 0 0 22px;
+    margin: 0 0 48px;
     font-size: var(--body-size);
     line-height: 28px;
     font-weight: var(--body-weight);
-    color: #262626;
 }
 
 .hero__cta {
     display: flex;
     flex-direction: row;
     gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-top: 40px;
 }
 
 .hero__cta btn {
@@ -383,14 +411,15 @@ ul {
 
 .portal-strip__left {
     position: relative;
-    height: 370px; /* BELANGRIJK: vaste hoogte */
+    height: 370px; 
+    width: 600px;
     display: flex;
     align-items: center;
 }
 
 .portal-path {
     position: relative;
-    width: 520px;   /* vaste breedte zoals Figma */
+    width: 520px; 
     height: 420px;
 }
 
@@ -953,7 +982,7 @@ ul {
 .cta__content {
     position: relative;
     z-index: 2;
-    max-width: 420px;
+    max-width: 600px;
     padding-bottom: 28px;
 }
 
@@ -1015,20 +1044,31 @@ ul {
     transform: translateY(0) scale(1);
 }
 
+@media (max-width: 1200px) {
+.hero__title {
+    margin: 0 0 18px;
+    font-size: var(--h1-size); 
+}
+}
+
 /* tablet */
 @media (max-width: 900px) {
+    .hero__inner {
+        padding: 120px 0 0;
+        margin: 0;
+    }
     .cta {
         grid-template-columns: 1fr 280px;
-        min-height: 220px;
+        /* min-height: 220px; */
     }
 
     .cta__visual {
-        height: 220px;
+        height: 400px;
     }
 
     .cta-monkey {
         width: 250px;
-        transform: translateY(70%);
+        transform: translateY(58%);
     }
 
     .cta:hover .cta-monkey {
@@ -1036,13 +1076,35 @@ ul {
     }
 
     .cta.is-excited .cta-monkey {
-        transform: translateY(16%);
+        transform: translateY(35%);
     }
 
     .cta-stars {
         width: 270px;
         right: -4px;
     }
+
+    .portal-strip__left {
+        width: 85%;
+    }
+
+    .portal-badge {
+        scale: 0.8 !important;
+    }
+
+    .portal-badge--check-1{
+        top: 25px !important;
+        left: 100px !important;
+    }
+    .portal-badge--check-2{
+        top: 120px !important;
+        left: 230px !important;
+ }
+    .portal-badge--star{
+        top: 230px !important;
+        left: 100px !important;
+    }
+
 }
 
 /* mobiel */
@@ -1054,7 +1116,7 @@ ul {
 
     .cta {
         grid-template-columns: 1fr;
-        min-height: 220px;
+        /* min-height: 220px; */
         gap: 0;
         overflow: hidden;
         margin-bottom: -16px;
@@ -1093,7 +1155,7 @@ ul {
         width: 190px;
         right: 0;
         bottom: -4px;
-        transform: translateY(78%);
+        transform: translateY(60%);
     }
 
     .cta:hover .cta-monkey {
@@ -1115,6 +1177,62 @@ ul {
     .pricing-card__price {
         font-size: 28px;
     }
+
+}
+
+@media (max-width: 660px) {
+    .final-cta {
+        padding: 20px 0 0;
+    }
+
+    .cta {
+        grid-template-columns: 1fr;
+        /* min-height: 600px; */
+        gap: 0;
+        overflow: hidden;
+        margin-bottom: -16px;
+    }
+
+    .cta__content {
+        max-width: 100%;
+        padding-top: 0px;
+        padding-bottom: 80px; /* ruimte voor de aap rechtsonder */
+    }
+
+    .cta__content h2 {
+        font-size: 20px;
+        line-height: 28px;
+        margin: 0 0 8px;
+    }
+
+    .cta__content p {
+        font-size: 14px;
+        line-height: 22px;
+        margin: 0 0 14px;
+        max-width: 300px;
+    }
+
+    .cta__visual {
+        position: absolute;
+        right: 20%;
+        bottom: 0;
+        width: 180px;
+        height: 120px;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .cta-monkey {
+        width: 190px;
+        right: 0;
+        bottom: -4px;
+        transform: translateY(58%);
+    }
+    .ml-embedded {
+        margin-bottom: 0px;
+    
+    }
+    
 }
 
 /* =======================
@@ -1209,9 +1327,15 @@ ul {
     }
 
     .hero__inner,
-    .benefits__inner,
     .faq__grid {
         gap: 34px;
+    }
+
+    .benefits__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 64px;
     }
 
     .practice__row,
@@ -1235,6 +1359,27 @@ ul {
     .testimonials__grid {
         gap: 14px;
     }
+    .portal-strip__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 0px;
+    }
+
+    .portal-path img {
+        scale: 0.9;
+    }
+    .portal-strip__inner {
+        padding: 0;
+    }
+    .portal-badge--check-1{
+        top: 35px;
+    }
+    .portal-badge--star{
+        top: 270px;
+    }
+    .hero__cta {
+        gap: 12px;
+        flex-wrap: wrap;
+    }  
 }
 
 /* =======================
@@ -1242,8 +1387,8 @@ ul {
 ======================= */
 @media (max-width: 820px) {
     :root {
-        --section-x: 16px;
-        --header-top: 12px;
+        --section-x: 24px;
+        --header-top: 16px;
         --header-height-space: 94px;
 
         --h1-size: 32px;
@@ -1259,9 +1404,10 @@ ul {
         --h4-line: 24px;
     }
 
+
     .topbar__inner {
         min-height: 58px;
-        padding: 12px 16px;
+        padding: 12px 24px;
         border-radius: 8px;
     }
 
@@ -1312,14 +1458,15 @@ ul {
     }
 
     .hero {
-        padding: calc(var(--header-height-space) + 12px) 0 30px;
-        margin-top: 5em;
+        padding: 0 24px!important;
+        margin-top: 2em;
+        margin-bottom: 4em;
     }
 
-    .hero__inner {
+    /* .hero__inner {
         grid-template-columns: 1fr;
         gap: 26px;
-    }
+    } */
 
     .hero__lead {
         font-size: 15px;
@@ -1389,13 +1536,16 @@ ul {
     }
 
     .practice__grid {
-        gap: 42px;
+        gap: 80px;
     }
 
     .practice__row,
     .practice__row--reverse {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 600px;
+
     }
 
     .practice__row--reverse::after {     
@@ -1420,6 +1570,7 @@ ul {
     .practice__copy {
         order: 2;
         max-width: 80%;
+        align-self: center;
     }
 
     .practice__copy p,
@@ -1544,6 +1695,7 @@ ul {
     .footer__logo {
         width: 92px;
     }
+  
 }
 
 @media (max-width: 480px) {
@@ -1581,6 +1733,12 @@ ul {
    PRACTICE MOBILE
 ======================= */
 @media (max-width: 768px) {
+     .hero__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        gap: 40px;
+    }
 
     .practice {
         padding: 56px 0 60px;
@@ -1893,6 +2051,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100% !important;
 }
 
 .form-field span {
@@ -1944,9 +2103,6 @@ ul {
 /* =======================
    ONBOARDING
 ======================= */
-.onboarding {
-    padding: 40px;
-}
 
 .onboarding__wrap {
     max-width: 1080px;
@@ -1960,6 +2116,12 @@ ul {
     margin-bottom: 10px;
     color: #666;
     font-size: 14px;
+}
+
+.onboarding-actions{
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
 }
 
 .progress-bar {
@@ -1997,12 +2159,21 @@ ul {
 
 @media (max-width: 480px) {
     .signup-onboarding {
-        padding: 40px 24px;
-    }    
+        padding: 40px 0px !important;
+    }  
+    .onboarding {
+        padding: 0;
+    }  
+    .onboarding-actions{
+        display: flex;
+        flex-direction: column !important;
+        gap: 12px;
+    }
+    
 }
 
 .signup-onboarding {
-    padding: 48px 0 40px;
+    padding: 80px 12px;
 }
 .onboarding-card {
     background: var(--bg-soft);
@@ -2020,7 +2191,4 @@ ul {
     margin: 1em !important;
 }
 
-.onboarding-actions .btn--primary{
-    margin-left: 16px;
-}
 
