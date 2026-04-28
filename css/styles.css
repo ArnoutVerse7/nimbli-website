@@ -349,6 +349,10 @@ ul {
     max-width: 440px;
 }
 
+.hero__copy span {
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
+
 .hero__title {
     margin: 0 0 18px;
     font-size: 50px; 
