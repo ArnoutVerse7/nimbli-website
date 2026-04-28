@@ -12,6 +12,7 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PT36XX7K');</script>
     <!-- End Google Tag Manager -->
+     
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
@@ -36,7 +37,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Nimbli — Praktijkbeheer">
     <meta property="og:description" content="Efficiënt praktijkbeheer voor therapeuten en begeleiders.">
-    <meta property="og:image" content="https://nimbli.be/assets/images/preview.png">
+    <meta property="og:image" content="https://nimbli.be/banner.png">
     <meta property="og:url" content="https://nimbli.be/">
     <meta property="og:type" content="website">
 
@@ -44,7 +45,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nimbli">
     <meta name="twitter:description" content="Efficiënt praktijkbeheer">
-    <meta name="twitter:image" content="https://nimbli.be/assets/images/preview.png">
+    <meta name="twitter:image" content="https://nimbli.be/banner.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -199,63 +200,6 @@
     </footer>
 
     <script>
-        const savedEmail = localStorage.getItem('waitlist_email');
-        const waitlistForm = document.getElementById('waitlistForm');
-        const navToggle = document.querySelector('.nav-toggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        if (!savedEmail) {
-            window.location.href = 'index.html';
-        }
-
-        if (waitlistForm) {
-            waitlistForm.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                const submitter = e.submitter;
-                const action = submitter ? submitter.value : 'full';
-
-                const originalText = submitter ? submitter.textContent : '';
-                if (submitter) {
-                    submitter.disabled = true;
-                    submitter.textContent = 'Bezig...';
-                }
-
-                const isSkip = action === 'skip';
-
-                const data = {
-                    email: savedEmail,
-                    praktijknaam: isSkip ? '' : waitlistForm.praktijknaam.value.trim(),
-                    voornaam: isSkip ? '' : waitlistForm.voornaam.value.trim(),
-                    achternaam: isSkip ? '' : waitlistForm.achternaam.value.trim(),
-                    action: action
-                };
-
-                try {
-                    const response = await fetch('/api/waitlist', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Inschrijving mislukt');
-                    }
-
-                    window.location.href = 'succes.html';
-                } catch (error) {
-                    alert('Er liep iets mis. Probeer opnieuw.');
-
-                    if (submitter) {
-                        submitter.disabled = false;
-                        submitter.textContent = originalText;
-                    }
-                }
-            });
-        }
-
         if (navToggle && mobileMenu) {
             navToggle.addEventListener('click', () => {
                 const isOpen = navToggle.classList.toggle('is-open');
